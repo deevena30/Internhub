@@ -69,66 +69,13 @@ const QuestionBank = () => {
           text-align: left;
           margin-bottom: 1.5rem;
         }
-        .tab-nav {
-          display: flex;
-          gap: 1rem;
-          margin-bottom: 1.5rem;
-        }
-        .tab-nav button {
-          background-color: #f0f6f8;
-          border: 1px solid #b0bec5;
-          color: #004d61;
-          padding: 0.5rem 1.25rem;
-          font-size: 1rem;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: background 0.3s ease;
-        }
-        .tab-nav button.active {
-          background-color: #e0f7fa;
-          color: black;
-          border-color: #004d61;
-        }
-        .tab-nav button:hover {
-          background-color: #e0f7fa;
-        }
-        .resource-section {
-          width: 100%;
-          background-color:white;
-        }
-        .resource-section details {
-          background: #f4f8fb;
-          border: 1px solid #cfdce6;
-          border-radius: 8px;
-          padding: 1rem;
-          margin: 1rem;
-          transition: all 0.3s ease;
-        }
-        .resource-section details:hover {
-          background: #e6f7ff;
-          transform: scale(1.01);
-          box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-        .resource-section summary {
-          cursor: pointer;
-          font-size: 1.1rem;
-          color: #004d61;
-        }
-        .resource-section p {
-          margin-left: 1.5rem;
-          font-size: 0.95rem;
-        }
-        .resource-section a {
-          color: #007baf;
-          text-decoration: none;
-        }
-        .resource-section a:hover {
-          text-decoration: underline;
-        }
+       
+
         .question-filter-row {
           width: 100%;
           display: flex;
-          justify-content: flex-end;
+          justify-content: center;
+          align-items: center;
           margin: 1.5rem 0 1rem 0;
         }
         .category-select {
@@ -196,7 +143,10 @@ const QuestionBank = () => {
             box-shadow: none !important;
             padding: 1rem !important;
           }
-          .question-heading, .question-subtext {
+          .question-heading {
+            text-align: left !important;
+          }
+          .question-subtext {
             text-align: center !important;
           }
         }
@@ -211,23 +161,21 @@ const QuestionBank = () => {
               <p className="question-subtext">
                 Switch between resources and common interview questions by category.
               </p>
+              
             </div>
-          </div>
-
-          <div className="tab-nav">
-            <button className={activeTab === 'questions' ? 'active' : ''} onClick={() => setActiveTab('questions')}> Common Questions</button>
           </div>
 
           {/* Only show questions tab now */}
           {(
             <>
               <div className="question-filter-row">
+               
                 <select
                   className="category-select"
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
                 >
-                  <option value="All">All Categories</option>
+                  <option value="All" style={{color: '#004d61'}}>All Categories</option>
                   {categories.map((cat) => (
                     <option key={cat} value={cat}>{cat}</option>
                   ))}
