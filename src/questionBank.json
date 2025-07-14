@@ -1,0 +1,622 @@
+{
+    "IT-Software": [
+    {
+      "question": "What programming languages are you proficient in?",
+      "answer": "💡 Tip: Mention languages you're confident with and provide context about usage.\n Example: 'I’m proficient in Python and C++. I’ve used Python for data analysis projects and C++ for competitive programming and DSA.'"
+    },
+    {
+      "question": "Explain OOP concepts.",
+      "answer": "💡 Tip: Cover core principles — encapsulation, inheritance, polymorphism, abstraction — with examples.\n Example: 'OOP is a programming paradigm based on objects. For instance, I used inheritance in a class hierarchy for a school management system.'"
+    },
+    {
+      "question": "What is the difference between stack and queue?",
+      "answer": "💡 Tip: Define both and compare their operations.\n Example: 'A stack uses LIFO while a queue uses FIFO. Stack is like undo history, queue is like a line at a ticket counter.'"
+    },
+    {
+      "question": "Describe a project where you implemented an algorithm.",
+      "answer": "💡 Tip: Talk about problem, algorithm used, and result.\n Example: 'I built a route optimizer using Dijkstra’s algorithm for my logistics project.'"
+    },
+    {
+      "question": "What is multithreading and when would you use it?",
+      "answer": "💡 Tip: Define and mention benefits in performance.\n Example: 'Multithreading allows multiple parts of a program to run concurrently. I used it in a file processing app to boost speed.'"
+    },
+    {
+      "question": "What are REST APIs and how do you use them?",
+      "answer": "💡 Tip: Explain with verbs (GET, POST) and endpoints.\n Example: 'I built a weather dashboard using a REST API that fetched forecast data using HTTP GET requests.'"
+    },
+    {
+      "question": "How do you debug code when it’s not working?",
+      "answer": "💡 Tip: Explain a logical approach with tools.\n Example: 'I use print statements, breakpoints in VSCode, and unit tests to isolate the issue step-by-step.'"
+    },
+    {
+      "question": "What is the time complexity of binary search?",
+      "answer": "💡 Tip: Mention O(log n) and how it improves over linear.\n Example: 'Binary search runs in O(log n) time and I used it to quickly find items in sorted product listings.'"
+    },
+    {
+      "question": "What is the difference between GET and POST in HTTP?",
+      "answer": "💡 Tip: Describe GET as data retrieval, POST as data submission.\n Example: 'GET requests URLs directly, POST sends data in the body, useful for login forms.'"
+    },
+    {
+      "question": "What is your approach to writing clean code?",
+      "answer": "💡 Tip: Mention naming, structure, comments.\n Example: 'I follow meaningful naming, modular functions, and use linters to ensure readability and consistency.'"
+    },
+    {
+      "question": "Have you worked with databases? Which ones?",
+      "answer": "💡 Tip: Mention RDBMS or NoSQL with usage.\n Example: 'I used MySQL for an e-commerce backend, and MongoDB for a note-taking app.'"
+    },
+    {
+      "question": "What is version control and how do you use Git?",
+      "answer": "💡 Tip: Explain Git commands and collaboration benefits.\n Example: 'I use Git to manage code with branches, commits, and pull requests, especially during group projects.'"
+    },
+    {
+      "question": "Explain the concept of recursion with an example.",
+      "answer": "💡 Tip: Show self-calling functions like factorial or Fibonacci.\n Example: 'I wrote a recursive function to compute factorials. Each call returns n * factorial(n-1) until n==0.'"
+    },
+    {
+      "question": "What are data structures you commonly use?",
+      "answer": "💡 Tip: Talk about arrays, stacks, queues, hashmaps.\n Example: 'I use hashmaps for fast lookup, queues in BFS, and stacks for undo operations.'"
+    },
+    {
+      "question": "How do you write test cases for your code?",
+      "answer": "💡 Tip: Mention edge cases, coverage, automation.\n Example: 'I use unit tests to check functions for valid, edge, and invalid inputs. I also run them before deployment.'"
+    }
+  ],
+  "Quant": [
+    {
+      "question": "What is the Black-Scholes model?",
+      "answer": "💡 Tip: Define the model and its use in pricing options.\n Example: 'The Black-Scholes model is used to calculate the theoretical price of European call and put options using market variables.'"
+    },
+    {
+      "question": "What is a Monte Carlo simulation?",
+      "answer": "💡 Tip: Describe it as a method for modeling uncertainty through random sampling.\n Example: 'I used Monte Carlo to estimate option pricing by simulating paths for stock prices over time.'"
+    },
+    {
+      "question": "Explain Value at Risk (VaR).",
+      "answer": "💡 Tip: Mention it measures potential loss in value of a risky asset.\n Example: 'A 5% daily VaR of $1M means there’s a 5% chance of losing more than $1M in a day.'"
+    },
+    {
+      "question": "What is the difference between covariance and correlation?",
+      "answer": "💡 Tip: Covariance shows direction of relationship, correlation standardizes it.\n Example: 'While both show relationships, correlation gives scale from -1 to 1, making comparisons easier.'"
+    },
+    {
+      "question": "How do you calculate the Sharpe Ratio?",
+      "answer": "💡 Tip: Mention it evaluates risk-adjusted return.\n Example: 'Sharpe Ratio = (Return - Risk-Free Rate) / Standard Deviation of returns.'"
+    },
+    {
+      "question": "What is volatility and how is it calculated?",
+      "answer": "💡 Tip: Explain it as a measure of standard deviation of returns.\n Example: 'I calculate daily return std deviation and annualize it using sqrt(252).'"
+    },
+    {
+      "question": "How do you hedge a portfolio?",
+      "answer": "💡 Tip: Mention strategies like options, futures, or diversification.\n Example: 'I hedged exposure to index drops using protective puts in a virtual trading challenge.'"
+    },
+    {
+      "question": "What is the role of a Quant in a trading firm?",
+      "answer": "💡 Tip: Describe modeling, analysis, and automation roles.\n Example: 'Quants build and test trading algorithms and risk models using statistical methods and coding.'"
+    },
+    {
+      "question": "What is a stochastic process?",
+      "answer": "💡 Tip: Define it as a sequence of random variables over time.\n Example: 'Stock prices modeled as a Geometric Brownian Motion is an example of a stochastic process.'"
+    },
+    {
+      "question": "How do you price a call option?",
+      "answer": "💡 Tip: Use models like Black-Scholes or binomial tree.\n Example: 'I used Black-Scholes for pricing European call options and tested it on historic data.'"
+    },
+    {
+      "question": "What is the Central Limit Theorem (CLT)?",
+      "answer": "💡 Tip: Explain how it underpins normal distribution of sample means.\n Example: 'CLT helps in risk modeling — even if returns aren't normal, sample averages will be.'"
+    },
+    {
+      "question": "What programming languages are used in quantitative finance?",
+      "answer": "💡 Tip: Mention Python, R, C++, MATLAB.\n Example: 'I use Python (NumPy, SciPy) for backtesting strategies, and C++ for performance-critical models.'"
+    },
+    {
+      "question": "What is PCA and where is it used?",
+      "answer": "💡 Tip: Principal Component Analysis is used for dimensionality reduction.\n Example: 'I applied PCA on equity return data to remove multicollinearity before regression analysis.'"
+    },
+    {
+      "question": "Describe a project where you used quantitative methods.",
+      "answer": "💡 Tip: Outline the problem, tools, and insights.\n Example: 'I built a risk scoring model using logistic regression for credit card approval.'"
+    },
+    {
+      "question": "What is mean reversion?",
+      "answer": "💡 Tip: It's a theory that prices revert to their historical average.\n Example: 'I designed a pairs trading strategy assuming price spread between two stocks reverts to the mean.'"
+    }
+  ],
+  "Analytics": [
+    {
+      "question": "What tools do you use for data analysis?",
+      "answer": "💡 Tip: Mention tools with examples from projects.\n Example: 'I use Python (Pandas, NumPy), Excel, and Tableau. In one project, I used Python to clean and visualize customer churn data.'"
+    },
+    {
+      "question": "What is the difference between supervised and unsupervised learning?",
+      "answer": "💡 Tip: Define both types and their applications.\n Example: 'Supervised learning uses labeled data (like classification), while unsupervised finds patterns in unlabeled data (like clustering).'"
+    },
+    {
+      "question": "How do you handle missing data in a dataset?",
+      "answer": "💡 Tip: Mention methods like imputation or dropping.\n Example: 'I check for missingness type, then impute with median or use KNN imputation based on situation.'"
+    },
+    {
+      "question": "What is A/B testing?",
+      "answer": "💡 Tip: Describe it as a method for comparing two variants.\n Example: 'I used A/B testing to test button colors on a website to measure click-through rates.'"
+    },
+    {
+      "question": "What are outliers and how do you detect them?",
+      "answer": "💡 Tip: Mention methods like IQR, Z-score.\n Example: 'I use the IQR method to filter out values outside 1.5×IQR or apply a Z-score threshold >3.'"
+    },
+    {
+      "question": "What is the difference between correlation and causation?",
+      "answer": "💡 Tip: Correlation doesn’t imply causation.\n Example: 'I found a correlation between page views and sales, but validated causation using A/B testing.'"
+    },
+    {
+      "question": "Explain a data project you’ve worked on.",
+      "answer": "💡 Tip: Describe your role, tools, and outcome.\n Example: 'I analyzed sales data using Pandas and presented insights in Tableau, helping increase revenue by 10%.'"
+    },
+    {
+      "question": "What is the difference between classification and regression?",
+      "answer": "💡 Tip: Classification predicts labels, regression predicts continuous values.\n Example: 'I used classification to detect spam emails, and regression to forecast product demand.'"
+    },
+    {
+      "question": "How do you evaluate model performance?",
+      "answer": "💡 Tip: Use metrics like accuracy, F1-score, RMSE.\n Example: 'For classification, I look at F1-score. For regression, I use RMSE and R-squared.'"
+    },
+    {
+      "question": "What is feature engineering?",
+      "answer": "💡 Tip: Creating meaningful inputs for ML models.\n Example: 'I created a time_since_last_purchase feature for predicting user churn.'"
+    },
+    {
+      "question": "What is dimensionality reduction?",
+      "answer": "💡 Tip: Reducing input variables while retaining info.\n Example: 'I used PCA to reduce variables in a credit risk dataset before applying logistic regression.'"
+    },
+    {
+      "question": "What are some common data visualization practices you follow?",
+      "answer": "💡 Tip: Focus on clarity and relevance.\n Example: 'I use histograms for distributions, line charts for trends, and color palettes that enhance readability.'"
+    },
+    {
+      "question": "How do you deal with multicollinearity?",
+      "answer": "💡 Tip: Identify and remove or combine correlated features.\n Example: 'I calculate VIF scores and drop variables above threshold or use PCA.'"
+    },
+    {
+      "question": "Explain normalization vs standardization.",
+      "answer": "💡 Tip: Both are scaling techniques.\n Example: 'Normalization scales between 0-1, while standardization transforms to zero mean and unit variance.'"
+    },
+    {
+      "question": "How do you build a dashboard?",
+      "answer": "💡 Tip: Mention design principles and tools.\n Example: 'I built a sales dashboard in Tableau using KPIs like revenue growth, churn rate, and regional sales.'"
+    }
+  ],
+  "Product": [
+    {
+      "question": "Describe a product you admire and why.",
+      "answer": "💡 Tip: Choose a real-world product and explain from a PM/user perspective.\n Example: 'I admire Notion for its flexibility, clean UI, and intuitive design which supports both individuals and teams.'"
+    },
+    {
+      "question": "What is the role of a Product Manager?",
+      "answer": "💡 Tip: Mention leadership, user research, and roadmap planning.\n Example: 'A PM bridges user needs with engineering execution by defining what to build and why, based on data and vision.'"
+    },
+    {
+      "question": "How do you prioritize features?",
+      "answer": "💡 Tip: Use frameworks like RICE or MoSCoW.\n Example: 'I use the RICE framework — Reach, Impact, Confidence, and Effort — to objectively prioritize features.'"
+    },
+    {
+      "question": "Describe a time you handled trade-offs in product design.",
+      "answer": "💡 Tip: Show stakeholder collaboration and reasoning.\n Example: 'We dropped one feature from MVP to meet launch deadline and validated it wasn't critical via user feedback.'"
+    },
+    {
+      "question": "How do you measure product success?",
+      "answer": "💡 Tip: Mention KPIs and metrics.\n Example: 'For my productivity app project, we tracked daily active users, retention, and task completion rate as success metrics.'"
+    },
+    {
+      "question": "What is an MVP and how do you decide its scope?",
+      "answer": "💡 Tip: Focus on user value with minimal effort.\n Example: 'I define MVP by identifying the core problem, essential features, and testing it with early adopters.'"
+    },
+    {
+      "question": "What would you improve in our app/website?",
+      "answer": "💡 Tip: Study it, find pain points, and propose value-driven fixes.\n Example: 'I'd improve the onboarding flow to reduce drop-off by simplifying steps and adding progress indicators.'"
+    },
+    {
+      "question": "How do you handle disagreement with engineering or design?",
+      "answer": "💡 Tip: Talk about alignment and communication.\n Example: 'I bring data and user context to find middle ground and ensure product goals are met collaboratively.'"
+    },
+    {
+      "question": "What’s a product trend you’re excited about?",
+      "answer": "💡 Tip: Pick a recent trend and tie it to user impact.\n Example: 'I’m excited by AI copilots in productivity tools that make users faster and reduce mental load.'"
+    },
+    {
+      "question": "How do you conduct user research?",
+      "answer": "💡 Tip: Mention interviews, surveys, usage analytics.\n Example: 'I run 1-on-1 interviews and analyze usage heatmaps to identify user pain points before building solutions.'"
+    },
+    {
+      "question": "What are the biggest challenges for a PM?",
+      "answer": "💡 Tip: Talk about ambiguity, prioritization, and alignment.\n Example: 'Balancing user needs, business goals, and tech constraints while keeping the team aligned is a key challenge.'"
+    },
+    {
+      "question": "Tell me about a product you launched end-to-end.",
+      "answer": "💡 Tip: Structure using problem-solution-impact.\n Example: 'I launched a feedback widget for a college portal that improved feature requests and got 70% usage within 2 weeks.'"
+    },
+    {
+      "question": "How do you work with cross-functional teams?",
+      "answer": "💡 Tip: Mention collaboration, empathy, documentation.\n Example: 'I schedule joint reviews, document requirements clearly, and ensure all teams are looped in with progress updates.'"
+    },
+    {
+      "question": "How do you decide what not to build?",
+      "answer": "💡 Tip: Focus on user need, effort vs value.\n Example: 'I evaluate if the feature aligns with our goals, and deprioritize if it distracts from the core experience.'"
+    },
+    {
+      "question": "What’s your favorite framework for product thinking?",
+      "answer": "💡 Tip: Talk about frameworks like JTBD, Kano, RICE.\n Example: 'I like the Jobs-To-Be-Done framework — it keeps user motivation central and avoids feature creep.'"
+    }
+  ],
+  "Strategy": [
+    {
+      "question": "How would you evaluate a company’s entry into a new market?",
+      "answer": "💡 Tip: Use frameworks like PESTEL, Porter’s Five Forces.\n Example: 'I analyze political, economic, and competitive factors, then assess customer needs and entry barriers before making recommendations.'"
+    },
+    {
+      "question": "How do you define a company’s competitive advantage?",
+      "answer": "💡 Tip: Consider brand, cost structure, innovation, distribution.\n Example: 'Apple’s brand loyalty and integrated ecosystem give it a competitive edge.'"
+    },
+    {
+      "question": "How would you turn around a loss-making business?",
+      "answer": "💡 Tip: Talk about cost reduction, customer insights, repositioning.\n Example: 'I'd analyze cost centers, optimize pricing, and explore new customer segments.'"
+    },
+    {
+      "question": "What metrics would you track for a new product launch?",
+      "answer": "💡 Tip: Consider adoption, revenue, retention.\n Example: 'I’d track adoption rate, CAC, NPS, and churn over the first quarter.'"
+    },
+    {
+      "question": "Explain Porter's Five Forces and apply to a company of your choice.",
+      "answer": "💡 Tip: Describe each force — threat of new entry, rivalry, etc.\n Example: 'For Netflix, buyer power is high due to many streaming options, while supplier power is moderate as they create content in-house.'"
+    },
+    {
+      "question": "How do you identify strategic risks?",
+      "answer": "💡 Tip: Link to external factors, operations, and competition.\n Example: 'I assess market shifts, regulatory changes, and product cannibalization threats.'"
+    },
+    {
+      "question": "What is the difference between vision, mission, and strategy?",
+      "answer": "💡 Tip: Vision is long-term aspiration, mission is purpose, strategy is the roadmap.\n Example: 'Tesla’s vision is sustainable energy, mission is to accelerate it, and strategy includes innovation and vertical integration.'"
+    },
+    {
+      "question": "Describe a time you made a strategic recommendation.",
+      "answer": "💡 Tip: Use problem-context-solution-impact.\n Example: 'I suggested shifting ad spend to influencer marketing, which improved engagement by 35%.'"
+    },
+    {
+      "question": "What makes a strategy successful?",
+      "answer": "💡 Tip: Alignment with goals, execution, adaptability.\n Example: 'A successful strategy aligns with user needs, leverages core strengths, and adapts to change.'"
+    },
+    {
+      "question": "How do you benchmark against competitors?",
+      "answer": "💡 Tip: Analyze pricing, positioning, features, metrics.\n Example: 'I did a competitor audit comparing UX flows, pricing tiers, and user ratings before recommending improvements.'"
+    },
+    {
+      "question": "How would you manage conflicting strategies from different departments?",
+      "answer": "💡 Tip: Align all under common business goals.\n Example: 'I’d hold a joint workshop to map cross-functional priorities and align on shared outcomes.'"
+    },
+    {
+      "question": "What is a strategic moat?",
+      "answer": "💡 Tip: Sustainable advantage like IP, scale, or network effects.\n Example: 'Google’s data advantage and ecosystem integration form a deep strategic moat.'"
+    },
+    {
+      "question": "How do you analyze M&A opportunities?",
+      "answer": "💡 Tip: Look at strategic fit, synergies, financials.\n Example: 'I evaluate cultural alignment, cost synergies, and market expansion before giving a go/no-go.'"
+    },
+    {
+      "question": "What’s your approach to scenario planning?",
+      "answer": "💡 Tip: Define multiple futures and prepare responses.\n Example: 'I develop best-case, base-case, and worst-case paths and map decisions accordingly.'"
+    },
+    {
+      "question": "Tell me about a time you used data to support a strategy.",
+      "answer": "💡 Tip: Show data-driven decision-making.\n Example: 'I analyzed feature usage and customer churn to decide which product vertical to sunset.'"
+    }
+  ],
+  "Finance": [
+    {
+      "question": "Walk me through a DCF model.",
+      "answer": "💡 Tip: Explain steps — projecting FCFs, calculating terminal value, discounting with WACC.\n Example: 'I project free cash flows, calculate a terminal value using the Gordon Growth Model, and discount both using WACC to get enterprise value.'"
+    },
+    {
+      "question": "What are the three main financial statements?",
+      "answer": "💡 Tip: Explain balance sheet, income statement, cash flow statement.\n Example: 'The income statement shows profitability, balance sheet shows financial position, and cash flow explains liquidity and movements in cash.'"
+    },
+    {
+      "question": "What is working capital?",
+      "answer": "💡 Tip: Current assets minus current liabilities.\n Example: 'It reflects the liquidity available for day-to-day operations. Positive working capital usually signals good financial health.'"
+    },
+    {
+      "question": "How do changes in depreciation affect financial statements?",
+      "answer": "💡 Tip: Explain impact on income and cash flow.\n Example: 'Higher depreciation lowers net income but increases cash flow due to being a non-cash expense.'"
+    },
+    {
+      "question": "What is EBITDA?",
+      "answer": "💡 Tip: Earnings before interest, taxes, depreciation, and amortization.\n Example: 'EBITDA is used to evaluate operating performance without non-operating costs and accounting effects.'"
+    },
+    {
+      "question": "What is the difference between equity value and enterprise value?",
+      "answer": "💡 Tip: Enterprise value = equity value + debt - cash.\n Example: 'Equity value is what shareholders own; enterprise value reflects the firm’s total value including debt.'"
+    },
+    {
+      "question": "What is CAPM and where is it used?",
+      "answer": "💡 Tip: Used to calculate cost of equity.\n Example: 'CAPM = Risk-Free Rate + Beta × (Market Return - Risk-Free Rate). It’s used in calculating WACC in valuation models.'"
+    },
+    {
+      "question": "How does a $10 increase in depreciation affect the financial statements?",
+      "answer": "💡 Tip: Walk through all 3 statements.\n Example: 'Net income decreases by $7 (taxed at 30%), cash increases by $3 (add back non-cash depreciation), and PP&E decreases by $10 on balance sheet.'"
+    },
+    {
+      "question": "What is WACC?",
+      "answer": "💡 Tip: Weighted Average Cost of Capital.\n Example: 'WACC is the blended cost of equity and debt, used to discount future cash flows in DCF valuation.'"
+    },
+    {
+      "question": "What are some common valuation methods?",
+      "answer": "💡 Tip: DCF, Comparable Company Analysis, Precedent Transactions.\n Example: 'I used DCF to value a tech startup and comparables for benchmarking against listed peers.'"
+    },
+    {
+      "question": "What’s the difference between LBO and DCF?",
+      "answer": "💡 Tip: LBO focuses on IRR to equity investors, DCF on cash flows.\n Example: 'LBO models capital structure and debt repayments, while DCF forecasts FCFs and discounts them using WACC.'"
+    },
+    {
+      "question": "How do you evaluate a company’s financial health?",
+      "answer": "💡 Tip: Check liquidity, solvency, profitability.\n Example: 'I look at current ratio, debt/equity, ROE, and free cash flow trends.'"
+    },
+    {
+      "question": "What is goodwill and how does it arise?",
+      "answer": "💡 Tip: It arises in acquisitions.\n Example: 'Goodwill is the excess of purchase price over fair value of net assets acquired — represents brand, reputation, etc.'"
+    },
+    {
+      "question": "What is a leveraged buyout (LBO)?",
+      "answer": "💡 Tip: Acquiring a company using debt.\n Example: 'In an LBO, the acquirer finances a large portion of the purchase with debt, repaid using the target’s cash flows.'"
+    },
+    {
+      "question": "What is the difference between cash and accrual accounting?",
+      "answer": "💡 Tip: Timing of recognition.\n Example: 'Cash basis records when cash changes hands; accrual basis records revenue/expenses when incurred.'"
+    }
+  ],
+  "Consulting": [
+    {
+      "question": "How would you structure a market entry case?",
+      "answer": "💡 Tip: Use a structured framework: market attractiveness, entry barriers, competition, financials.\n Example: 'I’d assess market size and growth, identify entry barriers, analyze competitors, and evaluate entry modes like JV or acquisition.'"
+    },
+    {
+      "question": "What’s the difference between revenue and profit?",
+      "answer": "💡 Tip: Revenue is total sales, profit is what's left after costs.\n Example: 'Revenue is the money made from sales. Profit is revenue minus costs — it shows how efficiently the company is run.'"
+    },
+    {
+      "question": "Tell me about a time you solved a problem with limited data.",
+      "answer": "💡 Tip: Use STAR (Situation, Task, Action, Result).\n Example: 'Faced with limited user feedback, I ran a quick survey and backed assumptions with competitor benchmarks, helping guide design changes.'"
+    },
+    {
+      "question": "How do you prioritize tasks in a high-pressure project?",
+      "answer": "💡 Tip: Use effort vs impact or MoSCoW.\n Example: 'I classify tasks as Must-Have, Should-Have, etc., and focus on high-impact tasks first.'"
+    },
+    {
+      "question": "What frameworks do you use in case interviews?",
+      "answer": "💡 Tip: Profitability, 4Ps, 3Cs, Value Chain.\n Example: 'For a cost problem, I use a value chain breakdown to isolate fixed and variable costs.'"
+    },
+    {
+      "question": "How do you handle ambiguity?",
+      "answer": "💡 Tip: Ask clarifying questions and break down the problem.\n Example: 'I list knowns and unknowns, hypothesize scenarios, and test them step-by-step.'"
+    },
+    {
+      "question": "What motivates you to work in consulting?",
+      "answer": "💡 Tip: Show interest in learning, problem solving, exposure.\n Example: 'I love working on diverse business problems and being in an environment that pushes analytical thinking and communication.'"
+    },
+    {
+      "question": "How do you estimate the size of the bicycle market in India?",
+      "answer": "💡 Tip: Use top-down or bottom-up estimation.\n Example: 'Population × % owning bikes × replacement rate per year.'"
+    },
+    {
+      "question": "Tell me about a time you led a team.",
+      "answer": "💡 Tip: Highlight delegation, conflict resolution, results.\n Example: 'As team lead in a college fest, I coordinated 10 volunteers, ensured on-time execution, and handled budget overruns effectively.'"
+    },
+    {
+      "question": "What makes a good consultant?",
+      "answer": "💡 Tip: Structured thinking, communication, adaptability.\n Example: 'A good consultant communicates clearly, adapts quickly, and maintains a structured problem-solving mindset.'"
+    },
+    {
+      "question": "What is MECE and why is it important?",
+      "answer": "💡 Tip: MECE = Mutually Exclusive, Collectively Exhaustive.\n Example: 'It avoids overlaps and ensures all possibilities are covered. I use it to break down problems clearly.'"
+    },
+    {
+      "question": "What is a case interview?",
+      "answer": "💡 Tip: It tests structured problem-solving under pressure.\n Example: 'In a case interview, you're given a business scenario and asked to diagnose issues and recommend actions.'"
+    },
+    {
+      "question": "How do you deal with clients who disagree with your findings?",
+      "answer": "💡 Tip: Back arguments with data, stay respectful.\n Example: 'I revisit the evidence calmly, understand their perspective, and adjust recommendations if needed.'"
+    },
+    {
+      "question": "What are the 3 C’s in consulting?",
+      "answer": "💡 Tip: Company, Customer, Competition.\n Example: 'In a strategy case, I look at the company’s strengths, the customer segment, and competitive positioning.'"
+    },
+    {
+      "question": "How do you analyze a declining profit problem?",
+      "answer": "💡 Tip: Break into revenue and cost.\n Example: 'I’d check if revenues are falling due to volume/price or if costs are increasing — then deep dive accordingly.'"
+    }
+  ],
+  "FMCG": [
+    {
+      "question": "What do you understand about the FMCG industry?",
+      "answer": "💡 Tip: Highlight fast-moving nature, branding, supply chain.\n Example: 'FMCG focuses on high-volume, low-margin products with strong distribution and brand loyalty playing key roles.'"
+    },
+    {
+      "question": "Why do you want to work in FMCG?",
+      "answer": "💡 Tip: Mention exposure to operations, sales, marketing, consumer behavior.\n Example: 'I’m drawn to how FMCG blends consumer insight, rapid execution, and cross-functional experience.'"
+    },
+    {
+      "question": "How would you improve sales of a declining product?",
+      "answer": "💡 Tip: Suggest using 4Ps framework (Product, Price, Place, Promotion).\n Example: 'I’d analyze the target segment, explore pricing tactics, improve visibility, and launch a fresh marketing campaign.'"
+    },
+    {
+      "question": "What are some key FMCG metrics you track?",
+      "answer": "💡 Tip: Include market share, volume growth, penetration, shelf visibility.\n Example: 'I track market share, volume growth, and retail coverage to assess brand performance.'"
+    },
+    {
+      "question": "How would you launch a new product in rural India?",
+      "answer": "💡 Tip: Talk about pricing, distribution, influencers, sampling.\n Example: 'I'd ensure low price, use van campaigns, work with local influencers, and focus on education through sampling.'"
+    },
+    {
+      "question": "Describe a sales or marketing project you worked on.",
+      "answer": "💡 Tip: Use STAR and focus on customer insight + execution.\n Example: 'I designed a promo plan for a college event that increased footfall by 40% using influencer marketing and product bundles.'"
+    },
+    {
+      "question": "How do you handle supply chain disruptions?",
+      "answer": "💡 Tip: Mention contingency plans and supplier diversification.\n Example: 'I analyze weak links, build alternate supplier relations, and ensure visibility through digital tools.'"
+    },
+    {
+      "question": "What is the difference between FMCG and consumer durables?",
+      "answer": "💡 Tip: Short usage cycle vs long-term investment.\n Example: 'FMCG items are bought frequently (like toothpaste), while durables are long-term (like washing machines).'"
+    },
+    {
+      "question": "What do you know about our brands?",
+      "answer": "💡 Tip: Research company portfolio, highlight top performers.\n Example: 'I like how your brand X focuses on natural ingredients and how brand Y leads in urban segments.'"
+    },
+    {
+      "question": "How would you drive market share in a competitive category?",
+      "answer": "💡 Tip: Think pricing, visibility, differentiation, shelf share.\n Example: 'I’d analyze consumer gaps, offer combo packs, drive in-store branding, and optimize distribution.'"
+    },
+    {
+      "question": "How do you evaluate ad effectiveness?",
+      "answer": "💡 Tip: Mention KPIs like recall, engagement, sales lift.\n Example: 'I measure uplift in brand recall via surveys and compare pre-post campaign sales in test markets.'"
+    },
+    {
+      "question": "Tell me about a brand you think is doing well and why.",
+      "answer": "💡 Tip: Mention marketing, innovation, customer connection.\n Example: 'Amul stands out for relevant advertising, quality consistency, and widespread distribution.'"
+    },
+    {
+      "question": "What does a typical day in an FMCG internship look like?",
+      "answer": "💡 Tip: Mention sales visits, field data, planning.\n Example: 'I shadowed sales reps, gathered distributor insights, and proposed a scheme to boost underperforming SKUs.'"
+    },
+    {
+      "question": "How would you handle resistance from retailers during a campaign?",
+      "answer": "💡 Tip: Emphasize empathy, incentives, mutual benefit.\n Example: 'I’d understand their concern, propose a trial with margin support, and showcase success in other outlets.'"
+    },
+    {
+      "question": "What are the challenges of working in FMCG?",
+      "answer": "💡 Tip: Mention field intensity, fast turnaround, coordination.\n Example: 'You need to balance data-backed decisions with field feedback, often with short deadlines and high stakeholder involvement.'"
+    }
+  ],
+  "Design": [
+    {
+      "question": "What does good design mean to you?",
+      "answer": "💡 Tip: Highlight usability, aesthetics, and user-centered thinking.\n Example: 'Good design is intuitive, accessible, and solves the user's problem without friction. I value simplicity and clarity.'"
+    },
+    {
+      "question": "Walk me through your design process.",
+      "answer": "💡 Tip: Mention research, ideation, prototyping, testing.\n Example: 'I start with user research, create personas, sketch ideas, build wireframes, and iterate based on feedback.'"
+    },
+    {
+      "question": "How do you handle feedback on your designs?",
+      "answer": "💡 Tip: Emphasize openness, collaboration, iteration.\n Example: 'I welcome feedback as it improves the design. I categorize it into actionable and subjective, then test and iterate.'"
+    },
+    {
+      "question": "Tell me about a design project you’re proud of.",
+      "answer": "💡 Tip: Use STAR (Situation, Task, Action, Result).\n Example: 'I redesigned our college fest website, improving mobile responsiveness and doubling visit duration.'"
+    },
+    {
+      "question": "How do you ensure your design is accessible?",
+      "answer": "💡 Tip: Mention color contrast, keyboard nav, alt text.\n Example: 'I follow WCAG guidelines, test with screen readers, and use tools like Stark for color contrast checks.'"
+    },
+    {
+      "question": "What tools do you use for UI/UX design?",
+      "answer": "💡 Tip: Name industry tools and justify usage.\n Example: 'I use Figma for wireframing and prototyping, and Adobe Illustrator for icon design. Figma’s collaboration is a key plus.'"
+    },
+    {
+      "question": "What’s the difference between UX and UI design?",
+      "answer": "💡 Tip: UX is about experience, UI is about interface.\n Example: 'UX focuses on how it works, UI on how it looks. UX involves research and flow; UI includes layout, typography, color.'"
+    },
+    {
+      "question": "How do you handle conflicting stakeholder opinions on design?",
+      "answer": "💡 Tip: Prioritize user needs and data.\n Example: 'I align all stakeholders to user goals and use usability testing or data to support design choices.'"
+    },
+    {
+      "question": "How do you validate your design decisions?",
+      "answer": "💡 Tip: Talk about usability testing, A/B tests.\n Example: 'I test prototypes with real users, gather qualitative insights, and A/B test variations if needed.'"
+    },
+    {
+      "question": "Describe a time when a design failed. What did you learn?",
+      "answer": "💡 Tip: Be honest and reflective.\n Example: 'A dashboard I designed was cluttered. Feedback helped me learn about visual hierarchy and user flow prioritization.'"
+    },
+    {
+      "question": "How do you stay updated with design trends?",
+      "answer": "💡 Tip: Mention communities, blogs, newsletters.\n Example: 'I follow UX Collective, use Dribbble for inspiration, and read Smashing Magazine and Nielsen Norman Group blogs.'"
+    },
+    {
+      "question": "How do you balance creativity and user constraints?",
+      "answer": "💡 Tip: Show empathy-driven creativity.\n Example: 'Constraints guide innovation. I stay creative within user needs, accessibility rules, and system limitations.'"
+    },
+    {
+      "question": "What’s your approach to mobile-first design?",
+      "answer": "💡 Tip: Think hierarchy, touch targets, performance.\n Example: 'I prioritize core content, use flexible layouts, and optimize interactions for thumbs and slower connections.'"
+    },
+    {
+      "question": "How do you present your design to a non-designer?",
+      "answer": "💡 Tip: Use user stories and impact.\n Example: 'I explain it in terms of problems solved, improved experience, and business impact rather than just visuals.'"
+    },
+    {
+      "question": "What’s your favorite design and why?",
+      "answer": "💡 Tip: Choose a real-world product and show admiration.\n Example: 'I love Duolingo’s design — fun, gamified, and intuitive. It balances motivation with user learning needs beautifully.'"
+    }
+  ],
+  "Core": [
+    {
+      "question": "What engineering subjects are you most confident in?",
+      "answer": "💡 Tip: Mention core subjects relevant to your branch.\n Example: 'I’m confident in Thermodynamics and Heat Transfer due to my academic performance and project work in those areas.'"
+    },
+    {
+      "question": "Explain a project you’ve worked on related to your core field.",
+      "answer": "💡 Tip: Use STAR format; show technical depth.\n Example: 'I developed a solar water heater using a parabolic trough; improved heating time by 30% through material and angle optimization.'"
+    },
+    {
+      "question": "How do you approach troubleshooting in engineering systems?",
+      "answer": "💡 Tip: Be systematic.\n Example: 'I first isolate variables, then analyze inputs/outputs, use diagnostics and cross-check with theoretical expectations.'"
+    },
+    {
+      "question": "What’s the difference between stress and strain?",
+      "answer": "💡 Tip: Definitions + example.\n Example: 'Stress is force per unit area; strain is the deformation as a ratio. Like pulling a rubber band — force causes elongation.'"
+    },
+    {
+      "question": "How do you stay updated in your core domain?",
+      "answer": "💡 Tip: Mention journals, newsletters, YouTube channels, competitions.\n Example: 'I follow ASME newsletters, attend webinars, and read papers on materials and manufacturing innovations.'"
+    },
+    {
+      "question": "What’s your favorite core subject and why?",
+      "answer": "💡 Tip: Pick a subject you can explain deeply.\n Example: 'I enjoy Control Systems because it blends mathematics and practical systems — I love tuning PID controllers in simulations.'"
+    },
+    {
+      "question": "What’s the significance of the Bernoulli’s principle?",
+      "answer": "💡 Tip: Explain real-world use.\n Example: 'It explains pressure-velocity trade-offs in fluids. Used in aircraft wings for lift and in carburetors for fuel mixing.'"
+    },
+    {
+      "question": "What are the key differences between AC and DC motors?",
+      "answer": "💡 Tip: Mention construction, speed control, applications.\n Example: 'AC motors are simpler and used for constant speed; DC motors allow precise speed control — used in robotics, EVs.'"
+    },
+    {
+      "question": "How do you read engineering drawings or schematics?",
+      "answer": "💡 Tip: Mention standards and practice.\n Example: 'I use BIS/ISO conventions, analyze views, symbols, and dimensions, and mentally visualize the 3D shape.'"
+    },
+    {
+      "question": "Explain how a refrigeration cycle works.",
+      "answer": "💡 Tip: Use a diagram in interviews.\n Example: 'It’s a closed-loop involving compression, condensation, expansion, and evaporation of refrigerant to absorb heat.'"
+    },
+    {
+      "question": "How do you approach a new technical concept you don’t understand?",
+      "answer": "💡 Tip: Show curiosity, structured learning.\n Example: 'I break it down, watch YouTube videos, read textbooks, and apply it through simulations or coding.'"
+    },
+    {
+      "question": "What programming or simulation tools do you know?",
+      "answer": "💡 Tip: Tailor to your branch.\n Example: 'I use MATLAB for simulations, SolidWorks for CAD, and ANSYS for thermal and structural analysis.'"
+    },
+    {
+      "question": "What’s the difference between hardening and tempering?",
+      "answer": "💡 Tip: Metallurgy basics.\n Example: 'Hardening increases hardness via quenching; tempering reduces brittleness by reheating below critical temperature.'"
+    },
+    {
+      "question": "How would you explain your final-year project to a non-engineer?",
+      "answer": "💡 Tip: Use simple terms and benefits.\n Example: 'I made a low-cost water filtration system using activated carbon — it improves drinking water for rural areas.'"
+    },
+    {
+      "question": "Have you participated in technical competitions or events?",
+      "answer": "💡 Tip: Share outcomes or learnings.\n Example: 'I participated in SAE Baja where I designed a brake system — learned design constraints and real-world fabrication challenges.'"
+    }
+  ]
+}
