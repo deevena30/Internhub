@@ -374,6 +374,41 @@ export default function ResumeBank() {
             flex-direction: column;
           }
         }
+        @media (min-width: 768px) {
+          .resume-bank-wrapper {
+            margin-left: 240px; /* Match sidebar width */
+            width: calc(100vw - 240px);
+          }
+        }
+        @media (max-width: 768px) {
+          .resume-bank-wrapper {
+            margin-left: 0 !important;
+            width: 100% !important;
+            padding: 1rem !important;
+          }
+          .sidebar {
+            display: none !important;
+            width: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+          .resume-bank-container {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 1rem !important;
+          }
+          .resume-bank-header {
+            text-align: center !important;
+            align-items: center !important;
+            justify-content: center !important;
+          }
+          .resume-bank-title, .resume-bank-subtitle {
+            text-align: center !important;
+          }
+        }
       `}</style>
 
       <div className="resume-bank-wrapper">

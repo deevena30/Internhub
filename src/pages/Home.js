@@ -22,114 +22,168 @@ const HomePage = () => {
   return (
     <>
       <style>{`
-        .home-wrapper {
-          min-height: 100vh;
-          background: linear-gradient(135deg, #f5f7fa, #c3e0e5);
-          padding: 4rem 1rem;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+  .home-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa, #c3e0e5);
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+  }
 
-        .home-card {
-          background-color: #ffffff;
-          border-radius: 12px;
-          max-width: 950px;
-          width: 100%;
-          padding: 3rem 2.5rem;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
-        }
-        .welcome-row {
-          display: flex;
-          align-items: flex-end; /* aligns the bottom of the image and text */
-          gap: 1rem;
-          margin-bottom: 0.5rem;
-          justify-content: center;
-        }
+  /* Sidebar space fix for larger screens */
+  @media (min-width: 768px) {
+    .home-wrapper {
+      margin-left: 240px; /* Match sidebar width */
+      width: calc(100vw - 240px);
+    }
+  }
 
-        .welcome-stick {
-          width: 100px;      /* Increase this value for a bigger image */
-          height: auto;
-          object-fit: contain;
-          transform: rotate(-10deg); /* or adjust as needed */
-          margin-bottom: 0.2em;
-          display: block;
-        }
-        .home-heading {
-          font-size: 2.5rem;
-          color: #004d60;
-          font-weight: 600;
-          margin-bottom: 0.5rem;
-        }
+  .home-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 950px;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  }
 
-        .home-subtitle {
-          color: #333;
-          font-size: 1.1rem;
-          margin-bottom: 2rem;
-        }
+  .welcome-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    text-align: center;
+  }
 
-        .quote-box {
-          font-style: italic;
-          background: #f1f8f9;
-          border-left: 4px solid #0097a7;
-          padding: 1rem 1.5rem;
-          margin-bottom: 2rem;
-          border-radius: 6px;
-          color: #444;
-        }
+  .welcome-stick {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    transform: rotate(-10deg);
+  }
 
-        .nav-section {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1rem;
-          margin-bottom: 2rem;
-        }
+  .home-heading {
+    font-size: 2.2rem;
+    color: #004d60;
+    font-weight: 600;
+    margin: 0;
+  }
 
-        .nav-link {
-          background-color: #0097a7;
-          color: white;
-          padding: 0.75rem 1.5rem;
-          border-radius: 6px;
-          text-decoration: none;
-          font-weight: 500;
-          transition: background 0.3s ease;
-        }
+  .home-subtitle {
+    color: #333;
+    font-size: 1.1rem;
+    margin: 1rem 0 2rem;
+    text-align: center;
+  }
 
-        .nav-link:hover {
-          background-color: #007b8a;
-        }
+  .quote-box {
+    font-style: italic;
+    background: #f1f8f9;
+    border-left: 4px solid #0097a7;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 6px;
+    color: #444;
+  }
 
-        .section-title {
-          font-size: 1.2rem;
-          font-weight: 600;
-          color: #006064;
-          margin-top: 2rem;
-          margin-bottom: 1rem;
-        }
+  .nav-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
 
-        .section-list {
-          padding-left: 1.2rem;
-          color: #333;
-        }
+  .nav-link {
+    background-color: #0097a7;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
 
-        .section-list li {
-          margin-bottom: 0.5rem;
-        }
+  .nav-link:hover {
+    background-color: #007b8a;
+  }
 
-        .section-list a {
-          color: #007b8a;
-          text-decoration: none;
-        }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #006064;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
 
-        .section-list a:hover {
-          text-decoration: underline;
-        }
+  .section-list {
+    padding-left: 1.2rem;
+    color: #333;
+  }
 
-        @media (max-width: 600px) {
-          .home-heading { font-size: 1.8rem; }
-          .nav-section { flex-direction: column; }
-        }
-      `}</style>
+  .section-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .section-list a {
+    color: #007b8a;
+    text-decoration: none;
+  }
+
+  .section-list a:hover {
+    text-decoration: underline;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .home-card {
+      padding: 1.5rem 1rem;
+    }
+
+    .home-heading {
+      font-size: 1.8rem;
+    }
+
+    .nav-section {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .welcome-row {
+      flex-direction: column;
+    }
+
+    .welcome-stick {
+      width: 70px;
+    }
+
+    .home-subtitle {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .layout-wrapper {
+      flex-direction: column;
+    }
+    .sidebar {
+      display: none;
+      width: 0;
+      padding: 0;
+      margin: 0;
+    }
+    .main-content {
+      width: 100%;
+      padding: 1rem;
+      margin: 0;
+    }
+  }
+`}</style>
+
 
       <div className="home-wrapper">
         <div className="home-card">
@@ -137,6 +191,7 @@ const HomePage = () => {
             <img src={welcomestick} alt="Welcome" className="welcome-stick" />
             <h1 className="home-heading">Welcome to InternHub</h1>
           </div>
+
           <p className="home-subtitle">
             A peer-curated platform to guide you through the internship preparation process with clarity and confidence.
           </p>

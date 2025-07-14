@@ -161,6 +161,34 @@ export default function InternshipPlanner() {
           margin-top: 0.2rem;
           transform: scale(1.2);
         }
+
+        @media (min-width: 768px) {
+          .container {
+            margin-left: 240px; /* Match sidebar width */
+            width: calc(100vw - 240px);
+          }
+        }
+        @media (max-width: 768px) {
+          .container {
+            margin-left: 0 !important;
+            width: 100% !important;
+            padding: 1rem !important;
+          }
+          .sidebar {
+            display: none !important;
+            width: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+          .content-box {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 1rem !important;
+          }
+        }
       `}</style>
 
       <div className="container">
