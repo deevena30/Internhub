@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <main style={{ marginLeft: 240, width: 'calc(100vw - 240px)' }}>
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/resumes" element={<ResumeBank />} />
