@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import ResumeBank from './pages/ResumeBank';
 import Timeline from './pages/Timeline';
 import QuestionBank from './pages/QuestionBank';
+import Resources from './pages/Resources';
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route path="/resumes" element={<ResumeBank />} />
               <Route path="/timeline" element={<Timeline />} />
               <Route path="/questions" element={<QuestionBank />} />
+              <Route path="/resources" element={<Resources />} />
             </Routes>
           </div>
         </main>

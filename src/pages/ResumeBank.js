@@ -419,17 +419,6 @@ export default function ResumeBank() {
             <p className="resume-bank-subtitle">
               Browse successful previous years internship resumes from various fields
             </p>
-            <div style={{ marginTop: '1rem', marginBottom: '2rem', fontSize: '0.95rem', color: '#007baf' }}>
-            Consult Resumes of Seniors - Notebook prepared by Krishna Gahlod (3rd year, IIT Bombay) {' '}
-            <a
-              href="https://notebooklm.google.com/notebook/91048aab-7371-4083-ad2d-934211692384?_gl=1*13orn4i*_ga*MTYzODk3MzQ0OS4xNzM0ODk3Mzk1*_ga_W0LDH41ZCB*MTc0MjY2NzEyMi4yLjAuMTc0MjY2NzEyMi42MC4wLjA.&original_referer=https:%2F%2Fnotebooklm.google%23&pli=1"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ fontWeight: 'bold', color: '#007baf', textDecoration: 'none' }}
-            >
-            click to view
-            </a>
-            </div>
           </div>
           <div className="filter-section">
             
