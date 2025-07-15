@@ -144,13 +144,14 @@ export default function ResumeBank() {
       <style>{`
         .resume-bank-wrapper {
           min-height: 100vh;
-          background: linear-gradient(135deg, #f5f7fa, #c3e0e5);
+          background: linear-gradient(135deg,rgb(164, 212, 218),rgb(235, 241, 242));
           padding: 2rem 1rem;
         }
 
         .resume-bank-container {
           max-width: 1200px;
           margin: 0 auto;
+          background: transparent; /* or no background */
         }
 
         .resume-bank-header {
@@ -223,6 +224,7 @@ export default function ResumeBank() {
           box-shadow: 0 4px 16px rgba(0,0,0,0.06);
           transition: transform 0.2s ease, box-shadow 0.2s ease;
           border: 1px solid #f0f0f0;
+          margin:1rem;
         }
 
         .resume-card:hover {
@@ -342,22 +344,25 @@ export default function ResumeBank() {
           }
           
           .resumes-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            margin:0rem;
           }
           
           .filter-section {
-            padding: 1rem;
+            padding: 0.5rem;
+            margin-left:5rem;
+            margin-right:5rem;
           }
           
           .filter-label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             margin-right: 0;
           }
           
           .filter-select {
             width: 100%;
-            max-width: 300px;
+            max-width: 100px;
           }
         }
 
@@ -383,7 +388,7 @@ export default function ResumeBank() {
         @media (max-width: 768px) {
           .resume-bank-wrapper {
             margin-left: 0 !important;
-            width: 100% !important;
+            width: 100% ;
             padding: 1rem !important;
           }
           .sidebar {
@@ -393,8 +398,6 @@ export default function ResumeBank() {
             margin: 0 !important;
           }
           .resume-bank-container {
-            width: 100% !important;
-            max-width: 100% !important;
             margin: 0 !important;
             border-radius: 0 !important;
             box-shadow: none !important;

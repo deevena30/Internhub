@@ -6,7 +6,7 @@ export default function Resources() {
       <style>{`
         .resource-container {
           min-height: 100vh;
-          background: linear-gradient(135deg, #f3faff, #dceef2);
+         background: linear-gradient(135deg,rgb(190, 199, 213),rgb(102, 211, 230));
           padding: 4rem 1rem;
           display: flex;
           justify-content: center;
@@ -113,7 +113,7 @@ export default function Resources() {
             </div>
             {/* --- IT-Software --- */}
             <details>
-              <summary>💻 IT-Software</summary>
+              <summary> IT-Software</summary>
               <p><a href="https://github.com/blind75/Blind75" target="_blank" rel="noopener noreferrer">Blind 75 DSA – Most asked coding questions for interviews</a></p>
               <p><a href="https://leetcode.com/problemset/top-interview-questions/" target="_blank" rel="noopener noreferrer">LeetCode – Top Interview Questions Practice Set</a></p>
               <p><a href="https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/" target="_blank" rel="noopener noreferrer">Striver’s SDE Sheet – Roadmap for coding interviews</a></p>
@@ -151,7 +151,7 @@ export default function Resources() {
             </details>
             {/* --- Analytics --- */}
             <details>
-              <summary>📊 Analytics</summary>
+              <summary>Analytics</summary>
               <p><a href="https://www.interviewquery.com/" target="_blank" rel="noopener noreferrer">Interview Query – Real analytics interview Qs (SQL, stats, case-based)</a></p>
               <p><a href="https://www.glassdoor.com/Interview/analytics-intern-interview-questions-SRCH_KO0,16.htm" target="_blank" rel="noopener noreferrer">Glassdoor – Analyst intern interview Qs (company-wise)</a></p>
               <p><a href="https://mode.com/sql-tutorial/" target="_blank" rel="noopener noreferrer">Mode Analytics SQL Tutorial – Practical SQL for analysts</a></p>

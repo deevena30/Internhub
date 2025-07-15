@@ -24,7 +24,7 @@ const HomePage = () => {
       <style>{`
   .home-wrapper {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa, #c3e0e5);
+    background: linear-gradient(135deg,rgb(190, 199, 213),rgb(102, 211, 230));
     padding: 2rem 1rem;
     display: flex;
     justify-content: center;

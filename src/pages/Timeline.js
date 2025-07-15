@@ -90,7 +90,7 @@ export default function InternshipPlanner() {
     <>
       <style>{`
         .container {
-          background: linear-gradient(135deg, #f3faff, #dceef2);
+          background: linear-gradient(135deg,rgb(190, 199, 213),rgb(102, 211, 230));
           min-height: 100vh;
           padding: 3rem 1rem;
           display: flex;

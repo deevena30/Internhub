@@ -22,7 +22,7 @@ const QuestionBank = () => {
       <style>{`
         .question-container {
           min-height: 100vh;
-          background: linear-gradient(135deg, #f3faff, #dceef2);
+          background: linear-gradient(135deg,rgb(164, 212, 218),rgb(102, 211, 230));
           padding: 4rem 1rem;
           display: flex;
           justify-content: center;
