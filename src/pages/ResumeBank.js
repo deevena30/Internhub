@@ -43,7 +43,7 @@ export default function ResumeBank() {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #f5f7fa, #c3e0e5);
+            background: white
           }
           
           .loading-spinner {
@@ -85,7 +85,7 @@ export default function ResumeBank() {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #f5f7fa, #c3e0e5);
+            background: white;
           }
           
           .error-card {
@@ -119,7 +119,7 @@ export default function ResumeBank() {
           }
           
           .retry-button:hover {
-            background: #007b8a;
+            background:white;
           }
         `}</style>
         <div className="error-container">
@@ -144,14 +144,21 @@ export default function ResumeBank() {
       <style>{`
         .resume-bank-wrapper {
           min-height: 100vh;
-          background: linear-gradient(135deg,rgb(164, 212, 218),rgb(235, 241, 242));
+          background: white;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
           padding: 2rem 1rem;
         }
 
         .resume-bank-container {
-          max-width: 1200px;
-          margin: 0 auto;
-          background: transparent; /* or no background */
+          max-width: 950px;
+          width: 100%;
+          background: white;
+          border-radius: 16px;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+          padding: 2rem 1.5rem;
+          margin: 2rem 0;
         }
 
         .resume-bank-header {

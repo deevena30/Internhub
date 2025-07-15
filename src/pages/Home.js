@@ -138,6 +138,13 @@ const HomePage = () => {
     text-decoration: underline;
   }
 
+  .resumes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards horizontally */
+    gap: 1.5rem;
+  }
+
   /* Mobile styles */
   @media (max-width: 768px) {
     .home-card {
