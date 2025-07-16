@@ -49,6 +49,7 @@ const HomePage = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
+          box-sizing: border-box;
         }
 
         .body-sidebar-open .home-wrapper {
@@ -87,16 +88,17 @@ const HomePage = () => {
           font-style: italic;
           background: var(--card-bg);
           border-left: 4px solid var(--accent-color);
-          padding: 1.25rem 1.75rem;
-          margin: 0 auto 2.5rem;
+          padding: 1.25rem 1.25rem;
+          margin: 0 auto 1.5rem;
           border-radius: var(--border-radius-sm);
           color: var(--text-dark);
           box-shadow: var(--shadow-sm);
-          max-width: 700px;
+          max-width: 500px;
           width: 100%;
           text-align: center;
           font-size: 1.1rem;
           position: relative;
+          box-sizing: border-box;
         }
 
         .quote-box::before {
@@ -160,6 +162,7 @@ const HomePage = () => {
           margin: 0 auto;
           max-width: 800px;
           width: 100%;
+          box-sizing: border-box;
         }
 
         .info-box > div {
@@ -284,6 +287,16 @@ const HomePage = () => {
           
           .home-subtitle {
             font-size: 1rem;
+          }
+        }
+
+        @media (min-width: 600px) {
+          .quote-box,
+          .info-box {
+            border-radius: var(--border-radius-lg);
+            max-width: 700px;
+            margin-right: auto;
+            margin-left: auto;
           }
         }
       `}</style>
