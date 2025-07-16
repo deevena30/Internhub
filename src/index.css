@@ -7,6 +7,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(58, 136, 215);
+  :root {
+    --primary-color: #4a6bff;
+    --secondary-color: #8e54e9;
+    --accent-color: #ff6b00;
+    --text-dark: #2c2c2c;
+    --text-light: #f8f9fa;
+    --bg-gradient: linear-gradient(135deg, #3a88d7 0%, #a768ee 100%);
+    --card-bg: rgba(255, 255, 255, 0.97);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+    --shadow-lg: 0 8px 20px rgba(0,0,0,0.15);
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --transition: all 0.3s ease;
+  }
 }
 
 code {

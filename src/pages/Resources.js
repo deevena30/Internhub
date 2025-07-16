@@ -4,137 +4,258 @@ export default function Resources() {
   return (
     <>
       <style>{`
+
         .resource-wrapper {
           min-height: 100vh;
-          background: linear-gradient(100deg, rgb(58, 136, 215) 0%, rgb(167, 104, 238) 100%);
-          padding: 2.5rem 1.5rem;
+          background: linear-gradient(135deg, #3a88d7 0%, #a768ee 100%);
+          padding: 3rem 1.5rem;
+          font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+          color: var(--text-dark);
           transition: margin-left 0.3s;
           margin-left: 0;
-          font-family: Arial, sans-serif;
-          color: #2C2C2C;
         }
+
         .body-sidebar-open .resource-wrapper {
           margin-left: 240px;
         }
+
+        .resource-container {
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        .resource-heading {
+          color: #333333;
+          font-size: 2.75rem;
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+          text-align: center;
+          letter-spacing: -0.5px;
+          line-height: 1.2;
+          text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .resource-intro {
+        border-radius: 10px;
+          padding: 1.25rem;
+          margin-bottom: 2.5rem;
+          text-align: center;
+          font-size: 1.1rem;
+          box-shadow: var(--shadow-sm);
+          color: var(--text-dark);
+        }
+
+        .resource-intro a {
+          color: white;
+          font-weight: 600;
+          text-decoration: none;
+          transition: var(--transition);
+          border-bottom: 1px solid transparent;
+        }
+
+        .resource-intro a:hover {
+          color: var(--accent-color);
+          border-bottom: 1px solid var(--accent-color);
+        }
+
+        .resource-section {
+          width: 100%;
+        }
+
+        .resource-section details {
+          background: rgb(206, 246, 219);
+          border-radius: 10px;
+          padding: 1rem 1.5rem;
+          margin-bottom: 1.25rem;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          border-left: 4px solid #62c282;
+          overflow: hidden;
+        }
+
+        .resource-section details[open] {
+          background: rgba(255,255,255,0.98);
+          box-shadow: var(--shadow-md);
+          border-left: 4px solid var(--accent-color);
+        }
+
+        .resource-section details:hover {
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-md);
+        }
+
+        .resource-section summary {
+          cursor: pointer;
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: var(--text-dark);
+          padding: 0.75rem 0;
+          outline: none;
+          position: relative;
+          list-style: none;
+          transition: var(--transition);
+        }
+
+        .resource-section summary::-webkit-details-marker {
+          display: none;
+        }
+
+        .resource-section summary::after {
+          content: '+';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.5rem;
+          color: var(--accent-color);
+          transition: var(--transition);
+        }
+
+        .resource-section details[open] summary::after {
+          content: '-';
+        }
+
+        .resource-section p {
+          margin: 0.75rem 0;
+          padding-left: 1rem;
+          font-size: 1rem;
+          color: var(--text-dark);
+          line-height: 1.6;
+          position: relative;
+        }
+
+        .resource-section p::before {
+          content: '→';
+          position: absolute;
+          left: -0.5rem;
+          color: var(--accent-color);
+        }
+
+        .resource-section a {
+          color: var(--primary-color);
+          text-decoration: none;
+          font-weight: 500;
+          transition: var(--transition);
+          border-bottom: 1px solid transparent;
+        }
+
+        .resource-section a:hover {
+          color: var(--accent-color);
+          border-bottom: 1px solid var(--accent-color);
+        }
+
+        /* Responsive styles */
         @media (max-width: 900px) {
           .body-sidebar-open .resource-wrapper {
             margin-left: 0;
           }
         }
-        .resource-heading {
-          color: #fff;
-          font-size: 2.7rem;
-          font-weight: 900;
-          margin-bottom: 1.5rem;
-          text-align: center;
-          letter-spacing: 1px;
-          text-shadow: 0 10px 8px rgba(20, 19, 18, 0.2);
-        }
-        .resource-section {
-          width: 100%;
-        }
-        .resource-section details {
-          background: rgba(255,255,255,0.95);
-          border-left: 4px solid rgb(98, 194, 130);
-          border-radius: 16px;
-          padding: 1.5rem 1.5rem 1rem 1.5rem;
-          margin: 1.5rem 0;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-          color: #444;
-          transition: all 0.3s ease;
-        }
-        .resource-section details:hover {
-          background: rgb(206, 246, 219);
-          transform: scale(1.01);
-          box-shadow: 0 2px 10px rgba(255,107,0,0.08);
-        }
-        .resource-section summary {
-          cursor: pointer;
-          font-size: 1.1rem;
-          color: #D84315;
-          font-weight: 600;
-        }
-        .resource-section p {
-          margin-left: 1.5rem;
-          font-size: 0.98rem;
-          color: #444;
-        }
-        .resource-section a {
-          color: #444;
-          text-decoration: underline;
-          font-weight: 500;
-        }
-        .resource-section a:hover {
-          color: #FF5722;
-        }
+
         @media (max-width: 768px) {
           .resource-wrapper {
-            padding: 1.5rem 1rem;
+            padding: 2rem 1rem;
           }
+          
           .resource-heading {
-            font-size: 1.5rem;
-            text-align: center !important;
+            font-size: 2.25rem;
+          }
+          
+          .resource-intro {
+            font-size: 1rem;
+          }
+          
+          .resource-section summary {
+            font-size: 1.1rem;
+            padding-right: 1.5rem;
           }
         }
-        @media (max-width: 480px) {
-          .resource-wrapper {
-            width: 100%;
-            padding: 0.5rem;
+
+        @media (max-width: 576px) {
+          .resource-heading {
+            font-size: 2rem;
           }
+          
+          .resource-section p {
+            font-size: 0.95rem;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .resource-heading {
+            font-size: 1.75rem;
+          }
+          
+          .resource-intro {
+            font-size: 0.95rem;
+          }
+        }
+
+        /* Animation for details */
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        .resource-section details[open] {
+          animation: fadeIn 0.3s ease forwards;
         }
       `}</style>
+
       <div className="resource-wrapper">
-        <h2 className="resource-heading">Resources</h2>
-        <div className="resource-section">
-          <div style={{ marginBottom: '1.5rem', fontSize: '1.05rem', color: '#e0e7ff', textShadow: '0 1px 4px rgba(58,136,215,0.10)' }}>
-            This resource is prepared by Career Cell, IIT Bombay{' '}
+        <div className="resource-container">
+          <h2 className="resource-heading">Resources</h2>
+          
+          <div className="resource-intro">
+            Resource prepared by Career Cell, IIT Bombay{' '}
             <a
               href="https://docs.google.com/document/d/1yp6UlGVGSvgXZv1ma7PN86jo3WvnTA46QclH7Ieo4_s/edit?tab=t.0"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: '#fff', textDecoration: 'underline', fontWeight: 'bold' }}
             >
               click here
             </a>
           </div>
-          {/* --- IT-Software --- */}
-          <details>
-            <summary> IT-Software</summary>
-            <p><a href="https://github.com/blind75/Blind75" target="_blank" rel="noopener noreferrer">Blind 75 DSA – Most asked coding questions for interviews</a></p>
-            <p><a href="https://leetcode.com/problemset/top-interview-questions/" target="_blank" rel="noopener noreferrer">LeetCode – Top Interview Questions Practice Set</a></p>
-            <p><a href="https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/" target="_blank" rel="noopener noreferrer">Striver’s SDE Sheet – Roadmap for coding interviews</a></p>
-            <p><a href="https://www.youtube.com/c/GateSmasher" target="_blank" rel="noopener noreferrer">Gate Smashers – DBMS, OS, OOP, CN simplified</a></p>
-            <p><a href="https://github.com/donnemartin/system-design-primer" target="_blank" rel="noopener noreferrer">System Design Primer – Fundamentals of scalable systems</a></p>
-            <p><a href="https://github.com/topics/student-projects" target="_blank" rel="noopener noreferrer">GitHub – Sample projects for students</a></p>
-          </details>
-          {/* --- Finance --- */}
-          <details>
-            <summary>Finance</summary>
-            <p><a href="https://www.investopedia.com" target="_blank" rel="noopener noreferrer">Investopedia – Learn financial concepts, terms, and ratios</a></p>
-            <p><a href="https://courses.corporatefinanceinstitute.com" target="_blank" rel="noopener noreferrer">CFI – Finance modeling, valuation & Excel certifications</a></p>
-            <p><a href="https://www.coursera.org/learn/financial-markets-global" target="_blank" rel="noopener noreferrer">Yale’s Financial Markets (Coursera) – Understand global markets</a></p>
-            <p><a href="https://www.wallstreetprep.com/self-study-programs/excel-crash-course/" target="_blank" rel="noopener noreferrer">Wall Street Prep – Excel crash course for finance</a></p>
-            <p><a href="https://www.macabacus.com/" target="_blank" rel="noopener noreferrer">Macabacus – Excel/PowerPoint templates and finance tools</a></p>
-            <p><a href="https://breakingintowallstreet.com" target="_blank" rel="noopener noreferrer">BIWS – Training for valuation, M&A, and DCF modeling</a></p>
-            <p><a href="https://pages.stern.nyu.edu/~adamodar/" target="_blank" rel="noopener noreferrer">Aswath Damodaran’s Classes – Free valuation lectures & tools</a></p>
-            <p><a href="https://mergersandinquisitions.com/" target="_blank" rel="noopener noreferrer">M&I – Investment banking interview prep and resume tips</a></p>
-            <p><a href="https://www.vault.com/" target="_blank" rel="noopener noreferrer">Vault – Finance firm guides & interview questions</a></p>
-            <p><a href="https://www.wallstreetoasis.com/" target="_blank" rel="noopener noreferrer">WSO – Real intern interview experiences and advice</a></p>
-            <p><a href="https://www.glassdoor.com" target="_blank" rel="noopener noreferrer">Glassdoor – Search company-specific finance interview Qs</a></p>
-          </details>
-          {/* --- Design --- */}
-          <details>
-            <summary>Design</summary>
-            <p><a href="https://www.bestfolios.com/" target="_blank" rel="noopener noreferrer">Bestfolios – Portfolio examples from top design interns</a></p>
-            <p><a href="https://uxfol.io/" target="_blank" rel="noopener noreferrer">UXfolio – Build UX case studies with portfolio templates</a></p>
-            <p><a href="https://www.notion.so/templates/portfolio" target="_blank" rel="noopener noreferrer">Notion Portfolio Templates – Create a quick clean showcase</a></p>
-            <p><a href="https://www.figma.com/community/file/1080562762323470121" target="_blank" rel="noopener noreferrer">Figma Design Interview Prep File – Product thinking, critique, whiteboarding</a></p>
-            <p><a href="https://refactoringui.com/" target="_blank" rel="noopener noreferrer">Refactoring UI – Design explanation frameworks</a></p>
-            <p><a href="https://sharpen.design/" target="_blank" rel="noopener noreferrer">Sharpen – Random UX/UI challenge generator</a></p>
-            <p><a href="https://uxtools.co/challenges" target="_blank" rel="noopener noreferrer">UXTools Challenge – Simulated interview-level challenges</a></p>
-            <p><a href="https://www.designerhangout.co/" target="_blank" rel="noopener noreferrer">Designer Hangout – Intern experience sharing & Slack group</a></p>
-            <p><a href="https://medium.com/tag/design-intern" target="_blank" rel="noopener noreferrer">Medium – Real design internship experience stories</a></p>
-          </details>
+
+          <div className="resource-section">
+            {/* --- IT-Software --- */}
+            <details>
+              <summary>IT-Software</summary>
+              <p><a href="https://github.com/blind75/Blind75" target="_blank" rel="noopener noreferrer">Blind 75 DSA – Most asked coding questions for interviews</a></p>
+              <p><a href="https://leetcode.com/problemset/top-interview-questions/" target="_blank" rel="noopener noreferrer">LeetCode – Top Interview Questions Practice Set</a></p>
+              <p><a href="https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/" target="_blank" rel="noopener noreferrer">Striver's SDE Sheet – Roadmap for coding interviews</a></p>
+              <p><a href="https://www.youtube.com/c/GateSmasher" target="_blank" rel="noopener noreferrer">Gate Smashers – DBMS, OS, OOP, CN simplified</a></p>
+              <p><a href="https://github.com/donnemartin/system-design-primer" target="_blank" rel="noopener noreferrer">System Design Primer – Fundamentals of scalable systems</a></p>
+              <p><a href="https://github.com/topics/student-projects" target="_blank" rel="noopener noreferrer">GitHub – Sample projects for students</a></p>
+            </details>
+
+            {/* --- Finance --- */}
+            <details>
+              <summary>Finance</summary>
+              <p><a href="https://www.investopedia.com" target="_blank" rel="noopener noreferrer">Investopedia – Learn financial concepts, terms, and ratios</a></p>
+              <p><a href="https://courses.corporatefinanceinstitute.com" target="_blank" rel="noopener noreferrer">CFI – Finance modeling, valuation & Excel certifications</a></p>
+              <p><a href="https://www.coursera.org/learn/financial-markets-global" target="_blank" rel="noopener noreferrer">Yale's Financial Markets (Coursera) – Understand global markets</a></p>
+              <p><a href="https://www.wallstreetprep.com/self-study-programs/excel-crash-course/" target="_blank" rel="noopener noreferrer">Wall Street Prep – Excel crash course for finance</a></p>
+              <p><a href="https://www.macabacus.com/" target="_blank" rel="noopener noreferrer">Macabacus – Excel/PowerPoint templates and finance tools</a></p>
+              <p><a href="https://breakingintowallstreet.com" target="_blank" rel="noopener noreferrer">BIWS – Training for valuation, M&A, and DCF modeling</a></p>
+              <p><a href="https://pages.stern.nyu.edu/~adamodar/" target="_blank" rel="noopener noreferrer">Aswath Damodaran's Classes – Free valuation lectures & tools</a></p>
+              <p><a href="https://mergersandinquisitions.com/" target="_blank" rel="noopener noreferrer">M&I – Investment banking interview prep and resume tips</a></p>
+              <p><a href="https://www.vault.com/" target="_blank" rel="noopener noreferrer">Vault – Finance firm guides & interview questions</a></p>
+              <p><a href="https://www.wallstreetoasis.com/" target="_blank" rel="noopener noreferrer">WSO – Real intern interview experiences and advice</a></p>
+              <p><a href="https://www.glassdoor.com" target="_blank" rel="noopener noreferrer">Glassdoor – Search company-specific finance interview Qs</a></p>
+            </details>
+
+            {/* --- Design --- */}
+            <details>
+              <summary>Design</summary>
+              <p><a href="https://www.bestfolios.com/" target="_blank" rel="noopener noreferrer">Bestfolios – Portfolio examples from top design interns</a></p>
+              <p><a href="https://uxfol.io/" target="_blank" rel="noopener noreferrer">UXfolio – Build UX case studies with portfolio templates</a></p>
+              <p><a href="https://www.notion.so/templates/portfolio" target="_blank" rel="noopener noreferrer">Notion Portfolio Templates – Create a quick clean showcase</a></p>
+              <p><a href="https://www.figma.com/community/file/1080562762323470121" target="_blank" rel="noopener noreferrer">Figma Design Interview Prep File – Product thinking, critique, whiteboarding</a></p>
+              <p><a href="https://refactoringui.com/" target="_blank" rel="noopener noreferrer">Refactoring UI – Design explanation frameworks</a></p>
+              <p><a href="https://sharpen.design/" target="_blank" rel="noopener noreferrer">Sharpen – Random UX/UI challenge generator</a></p>
+              <p><a href="https://uxtools.co/challenges" target="_blank" rel="noopener noreferrer">UXTools Challenge – Simulated interview-level challenges</a></p>
+              <p><a href="https://www.designerhangout.co/" target="_blank" rel="noopener noreferrer">Designer Hangout – Intern experience sharing & Slack group</a></p>
+              <p><a href="https://medium.com/tag/design-intern" target="_blank" rel="noopener noreferrer">Medium – Real design internship experience stories</a></p>
+            </details>
           {/* --- Analytics --- */}
           <details>
             <summary>Analytics</summary>
@@ -207,8 +328,9 @@ export default function Resources() {
             <p><a href="https://unstop.com/competitions" target="_blank" rel="noopener noreferrer">Unstop – Core domain challenges and case competitions</a></p>
             <p><a href="https://www.careers360.com" target="_blank" rel="noopener noreferrer">Careers360 – Resume and HR preparation for core internships</a></p>
           </details>
+          </div>
         </div>
       </div>
     </>
   );
-} 
+}

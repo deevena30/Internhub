@@ -142,17 +142,34 @@ export default function ResumeBank() {
   return (
     <>
       <style>{`
+        :root {
+          --primary-color: #4a6bff;
+          --secondary-color: #8e54e9;
+          --accent-color: #ff6b00;
+          --text-dark: #2c2c2c;
+          --text-light: #f8f9fa;
+          --bg-gradient: linear-gradient(135deg, #3a88d7 0%, #a768ee 100%);
+          --card-bg: rgba(255, 255, 255, 0.95);
+          --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+          --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+          --shadow-lg: 0 8px 20px rgba(0,0,0,0.15);
+          --border-radius: 16px;
+          --transition: all 0.3s ease;
+        }
         .resume-bank-wrapper {
           min-height: 100vh;
           width: 100vw;
           max-width: 100vw;
           box-sizing: border-box;
-          background: linear-gradient(100deg, rgb(58, 136, 215) 0%, rgb(167, 104, 238) 100%);
+          background: var(--bg-gradient);
           padding: 2.5rem 1.5rem;
           transition: margin-left 0.3s;
           margin-left: 0;
-          font-family: Arial, sans-serif;
-          color: #2C2C2C;
+          font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+          color: var(--text-dark);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
         .body-sidebar-open .resume-bank-wrapper {
           margin-left: 240px;
@@ -165,100 +182,177 @@ export default function ResumeBank() {
         .resume-bank-header {
           text-align: center;
           margin-bottom: 2.5rem;
+          max-width: 700px;
         }
         .resume-bank-title {
-          font-size: 2.7rem;
-          color: #fff;
-          font-weight: 900;
+          font-size: 2.75rem;
+          color: var(--text-light);
+          font-weight: 800;
           margin-bottom: 0.5rem;
-          letter-spacing: 1px;
-          text-shadow: 0 10px 8px rgba(20, 19, 18, 0.2);
+          letter-spacing: -0.5px;
+          line-height: 1.2;
+          text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .resume-bank-subtitle {
-          color: #444;
+          color: rgba(255,255,255,0.9);
           font-size: 1.15rem;
           margin-bottom: 2rem;
+          line-height: 1.5;
         }
         .filter-section {
-          background: rgba(255,255,255,0.95);
-          padding: 1.5rem 2rem;
-          border-radius: 16px;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+          background: var(--card-bg);
+          padding: 1.25rem 1.5rem;
+          border-radius: var(--border-radius);
+          box-shadow: var(--shadow-sm);
           margin-bottom: 2.5rem;
           text-align: center;
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-between;
+          justify-content: center;
           align-items: center;
-          gap: 1rem;
-          color: #444;
-          border-left: 4px solid #FF6B00;
+          gap: 1.2rem;
+          color: var(--text-dark);
+          border-left: 4px solid var(--accent-color);
+          max-width: 700px;
+          width: 100%;
         }
         .filter-label {
           font-weight: 600;
-          color: #D84315;
-          margin-right: 1rem;
+          color: var(--accent-color);
+          margin-right: 0.5rem;
         }
         .filter-select {
           padding: 0.5rem 1.25rem;
           border-radius: 8px;
-          border: 1.5px solid #FF6B00;
+          border: 1.5px solid var(--accent-color);
           font-size: 1rem;
           background: #fff;
-          color: #D84315;
+          color: var(--accent-color);
           box-shadow: 0 2px 8px rgba(255,107,0,0.08);
-          transition: border 0.2s;
+          transition: var(--transition);
         }
         .filter-select:focus {
-          border: 1.5px solid #3a88d7;
+          border: 1.5px solid var(--primary-color);
           outline: none;
+        }
+        .resume-count {
+          color: var(--primary-color);
+          font-size: 1.05rem;
+          font-weight: 500;
         }
         .resume-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
           gap: 2rem;
           width: 100%;
+          max-width: 1100px;
           margin: 0 auto;
         }
         .resume-card {
-          background: rgba(255,255,255,0.95);
-          border-radius: 16px;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-          padding: 2rem 1.5rem;
-          border-left: 4px solid #FF6B00;
-          color: #444;
+          background: var(--card-bg);
+          border-radius: var(--border-radius);
+          box-shadow: var(--shadow-md);
+          padding: 2rem 1.5rem 1.5rem 1.5rem;
+          border-left: 4px solid var(--accent-color);
+          color: var(--text-dark);
           display: flex;
           flex-direction: column;
           align-items: flex-start;
+          transition: box-shadow 0.2s, transform 0.2s;
+          position: relative;
+        }
+        .resume-card:hover {
+          box-shadow: var(--shadow-lg);
+          transform: translateY(-4px) scale(1.01);
         }
         .resume-title {
-          font-size: 1.2rem;
-          font-weight: bold;
-          color: #D84315;
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: var(--primary-color);
           margin-bottom: 0.5rem;
+          line-height: 1.2;
+        }
+        .resume-summary {
+          color: var(--text-dark);
+          margin-bottom: 1.1rem;
+          line-height: 1.6;
         }
         .resume-meta {
-          font-size: 0.98rem;
-          color: #444;
-          margin-bottom: 0.5rem;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.6rem;
+          margin-bottom: 1.1rem;
         }
-        .resume-link {
-          background: linear-gradient(90deg,rgb(68, 190, 123),rgb(66, 163, 81));
-          color: white;
+        .meta-tag {
+          display: inline-flex;
+          align-items: center;
+          padding: 0.28rem 0.85rem;
+          border-radius: 20px;
+          font-size: 0.89rem;
+          font-weight: 500;
+          background: #e0e7ff;
+          color: var(--primary-color);
+        }
+        .resume-preview {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 1.1rem;
+          padding-top: 1rem;
+          border-top: 1px solid #e0e7ff;
+          width: 100%;
+        }
+        .pdf-icon {
+          width: 40px;
+          height: 50px;
+          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          font-weight: bold;
+          font-size: 0.8rem;
+          box-shadow: var(--shadow-sm);
+          margin-right: 1rem;
+        }
+        .view-button, .resume-link {
+          background: linear-gradient(90deg, #44be7b, #42a351);
+          color: #fff;
           padding: 0.6rem 1.3rem;
           border-radius: 8px;
           text-decoration: none;
           font-weight: 600;
           font-size: 1.05rem;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          box-shadow: var(--shadow-sm);
           border: none;
-          margin-top: 1rem;
-          transition: background 0.3s, box-shadow 0.2s, transform 0.2s;
+          margin-left: auto;
+          transition: var(--transition);
+          cursor: pointer;
         }
-        .resume-link:hover {
-          background: linear-gradient(90deg, #FF6B00, #FFA000);
-          box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-          transform: translateY(-2px) scale(1.04);
+        .view-button:hover, .resume-link:hover {
+          background: linear-gradient(90deg, var(--accent-color), #ff8c00);
+          box-shadow: var(--shadow-md);
+          transform: translateY(-2px);
+        }
+        .no-resumes {
+          text-align: center;
+          background: var(--card-bg);
+          padding: 3rem 2rem;
+          border-radius: var(--border-radius);
+          box-shadow: var(--shadow-sm);
+          color: var(--primary-color);
+          max-width: 700px;
+          margin: 0 auto;
+        }
+        .no-resumes-icon {
+          font-size: 3rem;
+          color: var(--accent-color);
+          margin-bottom: 1rem;
+        }
+        .no-resumes-text {
+          color: var(--text-dark);
+          font-size: 1.13rem;
         }
         @media (max-width: 768px) {
           .resume-bank-wrapper {
