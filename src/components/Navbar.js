@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
@@ -10,29 +10,30 @@ const navItems = [
   { name: 'Question Bank', path: '/questions' },
 ];
 
-const Navbar = ({ onClose }) => {
+const Navbar = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
 
-  // Close sidebar on link click (mobile only)
+  // Add/remove class to body to shift main content
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add('body-sidebar-open');
+    } else {
+      document.body.classList.remove('body-sidebar-open');
+    }
+    return () => {
+      document.body.classList.remove('body-sidebar-open');
+    };
+  }, [open]);
+
+  // Close sidebar on link click
   const handleLinkClick = () => {
-    if (window.innerWidth < 900) setOpen(false);
-    if (onClose && window.innerWidth >= 900) onClose();
+    setOpen(false);
   };
 
   return (
     <>
-      {/* Close button for sidebar (desktop & mobile) */}
-      {onClose && (
-        <button
-          className="absolute top-4 right-4 z-30 bg-white rounded shadow p-2 md:block"
-          onClick={onClose}
-          aria-label="Close sidebar"
-          style={{ fontSize: '1.5rem', fontWeight: 'bold' }}
-        >
-          ×
-        </button>
-      )}
+      {/* Hamburger menu (always visible) */}
       <button
         className={`navbar-hamburger${open ? ' open' : ''}`}
         onClick={() => setOpen(!open)}
@@ -42,8 +43,11 @@ const Navbar = ({ onClose }) => {
         <span />
         <span />
       </button>
+      {/* Sidebar */}
       <nav className={`navbar-sidebar${open ? ' open' : ''}`}>
         <div className="navbar-header">InternHub</div>
+        {/* Close button always visible inside sidebar */}
+
         <ul className="navbar-list">
           {navItems.map(item => (
             <li key={item.path}>
@@ -58,6 +62,7 @@ const Navbar = ({ onClose }) => {
           ))}
         </ul>
       </nav>
+      {/* Overlay for closing sidebar */}
       {open && <div className="navbar-overlay" onClick={() => setOpen(false)} />}
     </>
   );

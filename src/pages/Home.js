@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import welcomestick from '../assets/welcomestick.png';
+
 
 const tips = [
   'Customize your resume to match the role requirements.',
@@ -21,32 +21,25 @@ const references = [
 const HomePage = () => {
   return (
     <>
-      <style>{`
+<style>{`
   .home-wrapper {
+    font-family: Arial, sans-serif;
     min-height: 100vh;
-    background: linear-gradient(135deg,rgb(190, 199, 213),rgb(102, 211, 230));
-    padding: 2rem 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    transition: all 0.3s ease;
+    background: linear-gradient(100deg, rgb(58, 136, 215) 0%, rgb(167, 104, 238) 100%);
+    padding: 2.5rem 1.5rem;
+    transition: margin-left 0.3s;
+    margin-left: 0;
+    color: #2C2C2C;
   }
 
-  /* Sidebar space fix for larger screens */
-  @media (min-width: 768px) {
-    .home-wrapper {
-      margin-left: 240px; /* Match sidebar width */
-      width: calc(100vw - 240px);
+  .body-sidebar-open .home-wrapper {
+    margin-left: 240px;
+  }
+
+  @media (max-width: 900px) {
+    .body-sidebar-open .home-wrapper {
+      margin-left: 0;
     }
-  }
-
-  .home-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    max-width: 950px;
-    width: 100%;
-    padding: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
   }
 
   .welcome-row {
@@ -54,7 +47,7 @@ const HomePage = () => {
     flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     justify-content: center;
     text-align: center;
   }
@@ -67,27 +60,30 @@ const HomePage = () => {
   }
 
   .home-heading {
-    font-size: 2.2rem;
-    color: #004d60;
-    font-weight: 600;
+    font-size: 2.7rem;
+    color:rgb(255, 255, 255);
+    font-weight: 900;
     margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 0 10px 8px rgba(20, 19, 18, 0.2);
   }
 
   .home-subtitle {
-    color: #333;
-    font-size: 1.1rem;
+    color: #444;
+    font-size: 1.15rem;
     margin: 1rem 0 2rem;
     text-align: center;
   }
 
   .quote-box {
     font-style: italic;
-    background: #f1f8f9;
-    border-left: 4px solid #0097a7;
+    background: rgba(255, 255, 255, 0.9);
+    border-left: 4px solid #FF6B00;
     padding: 1rem 1.5rem;
     margin-bottom: 2rem;
-    border-radius: 6px;
-    color: #444;
+    border-radius: 8px;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
 
   .nav-section {
@@ -99,30 +95,45 @@ const HomePage = () => {
   }
 
   .nav-link {
-    background-color: #0097a7;
+    background: linear-gradient(90deg,rgb(68, 190, 123),rgb(66, 163, 81));
     color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
+    padding: 0.75rem 1.7rem;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 500;
-    transition: background 0.3s ease;
+    font-weight: 600;
+    font-size: 1.08rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: background 0.3s, box-shadow 0.2s, transform 0.2s;
   }
 
   .nav-link:hover {
-    background-color: #007b8a;
+    background: linear-gradient(90deg, #FF6B00, #FFA000);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transform: translateY(-2px) scale(1.04);
+  }
+
+  .info-box {
+    background: rgba(255,255,255,0.95);
+    border-left: 4px solid #FF6B00;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem 1.5rem;
+    margin: 2.5rem auto 0 auto;
+    max-width: 700px;
   }
 
   .section-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #006064;
-    margin-top: 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #D84315;
+    margin-top: 1.2rem;
     margin-bottom: 1rem;
   }
 
   .section-list {
     padding-left: 1.2rem;
-    color: #333;
+    color: #444;
+    font-size: 1.05rem;
   }
 
   .section-list li {
@@ -130,89 +141,68 @@ const HomePage = () => {
   }
 
   .section-list a {
-    color: #007b8a;
-    text-decoration: none;
+    color:#444;
+    text-decoration: underline;
+    font-weight: 500;
   }
 
   .section-list a:hover {
-    text-decoration: underline;
+    color: #FF5722;
   }
 
-  .resumes-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the cards horizontally */
-    gap: 1.5rem;
-  }
-
-  /* Mobile styles */
   @media (max-width: 768px) {
-    .home-card {
-      padding: 1.5rem 1rem;
-    }
-
     .home-heading {
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
-
     .nav-section {
       flex-direction: column;
       align-items: stretch;
     }
-
     .welcome-row {
       flex-direction: column;
     }
-
     .welcome-stick {
       width: 70px;
     }
-
     .home-subtitle {
       font-size: 1rem;
     }
+    .info-box {
+      padding: 1.2rem 0.7rem;
+    }
   }
 
-  @media (max-width: 768px) {
-    .layout-wrapper {
-      flex-direction: column;
-    }
-    .sidebar {
-      display: none;
-      width: 0;
-      padding: 0;
-      margin: 0;
-    }
-    .main-content {
+  @media (max-width: 480px) {
+    .home-wrapper {
       width: 100%;
-      padding: 1rem;
-      margin: 0;
+      padding: 0.5rem;
     }
   }
 `}</style>
 
 
       <div className="home-wrapper">
-        <div className="home-card">
-          <div className="welcome-row">
-            <img src={welcomestick} alt="Welcome" className="welcome-stick" />
-            <h1 className="home-heading">Welcome to InternHub</h1>
-          </div>
+        <div className="welcome-row">
+         
+          <h1 className="home-heading">Welcome to InternHub</h1>
+        </div>
 
-          <p className="home-subtitle">
-            A peer-curated platform to guide you through the internship preparation process with clarity and confidence.
-          </p>
+        <p className="home-subtitle">
+          A peer-curated platform to guide you through the internship preparation process with clarity and confidence.
+        </p>
 
-          <div className="quote-box">
-            “Success is where preparation and opportunity meet.” — Bobby Unser
-          </div>
+        <div className="quote-box">
+          “Success is where preparation and opportunity meet.” — Bobby Unser
+        </div>
 
-          <div className="nav-section">
-            <Link to="/resumes" className="nav-link">Resume & SOP Bank</Link>
-            <Link to="/timeline" className="nav-link">Timeline & Checklist</Link>
-            <Link to="/questions" className="nav-link">Question Bank</Link>
-          </div>
+        <div className="nav-section">
+          <Link to="/resumes" className="nav-link">Resume & SOP Bank</Link>
+          <Link to="/timeline" className="nav-link">Timeline & Checklist</Link>
+          <Link to="/questions" className="nav-link">Question Bank</Link>
+          <Link to="/resources" className="nav-link">Resources</Link>
+        </div>
 
+        <div className="info-box">
           <div>
             <h3 className="section-title">Quick Tips</h3>
             <ul className="section-list">
@@ -221,7 +211,6 @@ const HomePage = () => {
               ))}
             </ul>
           </div>
-
           <div>
             <h3 className="section-title">Recommended Resources</h3>
             <ul className="section-list">

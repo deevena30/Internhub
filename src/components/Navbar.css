@@ -12,7 +12,7 @@
   position: fixed;
   top: 1rem;
   left: 1rem;
-  display: none;
+  display: flex; /* Always show hamburger */
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
@@ -53,6 +53,18 @@
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.06);
   z-index: 1000;
   transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
+
+.navbar-sidebar.open {
+  transform: translateX(0);
+}
+
+/* When sidebar is open, shift the main content */
+.body-sidebar-open main,
+.body-sidebar-open .main-content {
+  margin-left: 240px !important;
+  transition: margin-left 0.3s ease;
 }
 
 .navbar-header {
@@ -93,15 +105,12 @@
 
 /* Responsive styles */
 @media (max-width: 900px) {
-  .navbar-hamburger {
-    display: flex;
+  .body-sidebar-open main,
+  .body-sidebar-open .main-content {
+    margin-left: 0 !important;
   }
-
   .navbar-sidebar {
-    transform: translateX(-100%);
-  }
-
-  .navbar-sidebar.open {
-    transform: translateX(0);
+    width: 80vw;
+    max-width: 320px;
   }
 }

@@ -89,109 +89,101 @@ export default function InternshipPlanner() {
   return (
     <>
       <style>{`
-        .container {
-          background: linear-gradient(135deg,rgb(190, 199, 213),rgb(102, 211, 230));
+        .timeline-wrapper {
           min-height: 100vh;
-          padding: 3rem 1rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          background: linear-gradient(100deg, rgb(58, 136, 215) 0%, rgb(167, 104, 238) 100%);
+          padding: 2.5rem 1.5rem;
+          transition: margin-left 0.3s;
+          margin-left: 0;
+          font-family: Arial, sans-serif;
+          color: #2C2C2C;
         }
-
+        .body-sidebar-open .timeline-wrapper {
+          margin-left: 240px;
+        }
+        @media (max-width: 900px) {
+          .body-sidebar-open .timeline-wrapper {
+            margin-left: 0;
+          }
+        }
         .toggle-buttons {
           margin-bottom: 2rem;
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
         }
-
         .toggle-buttons button {
-          margin: 0 0.5rem;
-          padding: 0.6rem 1.2rem;
-          border: none;
+          padding: 0.75rem 1.7rem;
           border-radius: 8px;
-          background-color: #007c91;
+          background: linear-gradient(90deg,rgb(68, 190, 123),rgb(66, 163, 81));
           color: white;
-          font-size: 1rem;
-          cursor: pointer;
+          font-weight: 600;
+          font-size: 1.08rem;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          border: none;
+          transition: background 0.3s, box-shadow 0.2s, transform 0.2s;
         }
-
-        .toggle-buttons button.active {
-          background-color: #004d61;
+        .toggle-buttons button.active, .toggle-buttons button:hover {
+          background: linear-gradient(90deg, #FF6B00, #FFA000);
+          box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+          transform: translateY(-2px) scale(1.04);
         }
-
-        .content-box {
-          background: white;
-          border-radius: 12px;
-          padding: 2rem 2.5rem;
-          max-width: 850px;
-          width: 100%;
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-        }
-
         .heading {
           text-align: center;
-          font-size: 2rem;
-          color: #004d61;
-          font-weight: bold;
+          font-size: 2.7rem;
+          color: #fff;
+          font-weight: 900;
           margin-bottom: 2rem;
+          letter-spacing: 1px;
+          text-shadow: 0 10px 8px rgba(20, 19, 18, 0.2);
         }
-
         .section {
           margin-bottom: 2.5rem;
+          background: rgba(255,255,255,0.95);
+          border-left: 4px solid #FF6B00;
+          border-radius: 16px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+          padding: 2rem 1.5rem;
         }
-
         .section h3 {
-          color: #007c91;
-          font-size: 1.2rem;
-          margin-bottom: 0.75rem;
+          color: #D84315;
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
+          font-weight: bold;
         }
-
         .section ul {
-          padding-left: 1.5rem;
+          padding-left: 1.2rem;
+          color: #444;
+          font-size: 1.05rem;
         }
-
         .section li {
-          font-size: 1rem;
-          color: #333;
+          font-size: 1.05rem;
+          color: #444;
           margin-bottom: 0.5rem;
           display: flex;
           align-items: start;
         }
-
         input[type="checkbox"] {
           margin-right: 0.75rem;
           margin-top: 0.2rem;
           transform: scale(1.2);
         }
-
-        @media (min-width: 768px) {
-          .container {
-            margin-left: 240px; /* Match sidebar width */
-            width: calc(100vw - 240px);
+        @media (max-width: 768px) {
+          .timeline-wrapper {
+            padding: 1.5rem 0.7rem;
+          }
+          .heading {
+            font-size: 1.5rem;
           }
         }
-        @media (max-width: 768px) {
-          .container {
-            margin-left: 0 !important;
-            width: 100% !important;
-            padding: 1rem !important;
-          }
-          .sidebar {
-            display: none !important;
-            width: 0 !important;
-            padding: 0 !important;
-            margin: 0 !important;
-          }
-          .content-box {
-            width: 100% !important;
-            max-width: 100% !important;
-            margin: 0 !important;
-            border-radius: 0 !important;
-            box-shadow: none !important;
-            padding: 1rem !important;
+        @media (max-width: 480px) {
+          .timeline-wrapper {
+            width: 100%;
+            padding: 0.5rem;
           }
         }
       `}</style>
-
-      <div className="container">
+      <div className="timeline-wrapper">
         <div className="toggle-buttons">
           <button
             className={view === 'timeline' ? 'active' : ''}
@@ -206,48 +198,45 @@ export default function InternshipPlanner() {
             View Checklist
           </button>
         </div>
-
-        <div className="content-box">
-          {view === 'timeline' ? (
-            <>
-              <h2 className="heading">Internship Preparation Timeline</h2>
-              {timelineData.map((phase, idx) => (
-                <div className="section" key={idx}>
-                  <h3>{phase.title}</h3>
-                  <ul>
-                    {phase.tasks.map((task, i) => (
-                      <li key={i}>{task}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </>
-          ) : (
-            <>
-              <h2 className="heading">Internship Preparation Checklist</h2>
-              {Object.entries(checklistData).map(([section, tasks], idx) => (
-                <div className="section" key={idx}>
-                  <h3>{section}</h3>
-                  <ul>
-                    {tasks.map((task, i) => {
-                      const key = `${section}-${i}`;
-                      return (
-                        <li key={i}>
-                          <input
-                            type="checkbox"
-                            checked={checked[key] || false}
-                            onChange={() => toggleCheck(section, i)}
-                          />
-                          {task}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              ))}
-            </>
-          )}
-        </div>
+        {view === 'timeline' ? (
+          <>
+            <h2 className="heading">Internship Preparation Timeline</h2>
+            {timelineData.map((phase, idx) => (
+              <div className="section" key={idx}>
+                <h3>{phase.title}</h3>
+                <ul>
+                  {phase.tasks.map((task, i) => (
+                    <li key={i}>{task}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </>
+        ) : (
+          <>
+            <h2 className="heading">Internship Preparation Checklist</h2>
+            {Object.entries(checklistData).map(([section, tasks], idx) => (
+              <div className="section" key={idx}>
+                <h3>{section}</h3>
+                <ul>
+                  {tasks.map((task, i) => {
+                    const key = `${section}-${i}`;
+                    return (
+                      <li key={i}>
+                        <input
+                          type="checkbox"
+                          checked={checked[key] || false}
+                          onChange={() => toggleCheck(section, i)}
+                        />
+                        {task}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </>
+        )}
       </div>
     </>
   );

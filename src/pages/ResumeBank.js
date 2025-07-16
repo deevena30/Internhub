@@ -144,351 +144,207 @@ export default function ResumeBank() {
       <style>{`
         .resume-bank-wrapper {
           min-height: 100vh;
-          background: white;
-          display: flex;
-          justify-content: center;
-          align-items: flex-start;
-          padding: 2rem 1rem;
+          width: 100vw;
+          max-width: 100vw;
+          box-sizing: border-box;
+          background: linear-gradient(100deg, rgb(58, 136, 215) 0%, rgb(167, 104, 238) 100%);
+          padding: 2.5rem 1.5rem;
+          transition: margin-left 0.3s;
+          margin-left: 0;
+          font-family: Arial, sans-serif;
+          color: #2C2C2C;
         }
-
-        .resume-bank-container {
-          max-width: 950px;
-          width: 100%;
-          background: white;
-          border-radius: 16px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
-          padding: 2rem 1.5rem;
-          margin: 2rem 0;
+        .body-sidebar-open .resume-bank-wrapper {
+          margin-left: 240px;
         }
-
+        @media (max-width: 900px) {
+          .body-sidebar-open .resume-bank-wrapper {
+            margin-left: 0;
+          }
+        }
         .resume-bank-header {
           text-align: center;
-          margin-bottom: 2rem;
+          margin-bottom: 2.5rem;
         }
-
         .resume-bank-title {
-          font-size: 2.5rem;
-          color: #004d60;
-          font-weight: 600;
+          font-size: 2.7rem;
+          color: #fff;
+          font-weight: 900;
           margin-bottom: 0.5rem;
+          letter-spacing: 1px;
+          text-shadow: 0 10px 8px rgba(20, 19, 18, 0.2);
         }
-
         .resume-bank-subtitle {
-          color: #666;
-          font-size: 1.1rem;
+          color: #444;
+          font-size: 1.15rem;
           margin-bottom: 2rem;
         }
-
         .filter-section {
-          background: white;
-          padding: 1.5rem;
-          border-radius: 12px;
-          box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-          margin-bottom: 2rem;
+          background: rgba(255,255,255,0.95);
+          padding: 1.5rem 2rem;
+          border-radius: 16px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+          margin-bottom: 2.5rem;
           text-align: center;
-        }
-
-        .filter-label {
-          font-weight: 600;
-          color: #004d60;
-          margin-right: 1rem;
-          font-size: 1.1rem;
-        }
-
-        .filter-select {
-          padding: 0.75rem 1rem;
-          border: 2px solid #e0e0e0;
-          border-radius: 8px;
-          font-size: 1rem;
-          background: white;
-          color: #333;
-          cursor: pointer;
-          transition: border-color 0.3s ease;
-          min-width: 200px;
-        }
-
-        .filter-select:focus {
-          outline: none;
-          border-color: #0097a7;
-        }
-
-        .resume-count {
-          margin-top: 1rem;
-          color: #666;
-          font-size: 0.9rem;
-        }
-
-        .resumes-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-          gap: 1.5rem;
-        }
-
-        .resume-card {
-          background: white;
-          border-radius: 12px;
-          padding: 1.5rem;
-          box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-          border: 1px solid #f0f0f0;
-          margin:1rem;
-        }
-
-        .resume-card:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-        }
-
-        .resume-title {
-          font-size: 1.2rem;
-          font-weight: 600;
-          color: #004d60;
-          margin-bottom: 0.75rem;
-          line-height: 1.4;
-        }
-
-        .resume-summary {
-          color: #666;
-          margin-bottom: 1rem;
-          line-height: 1.5;
-        }
-
-        .resume-meta {
           display: flex;
           flex-wrap: wrap;
-          gap: 0.5rem;
-          margin-bottom: 1rem;
-        }
-
-        .meta-tag {
-          background: #e3f2fd;
-          color: #1976d2;
-          padding: 0.25rem 0.75rem;
-          border-radius: 20px;
-          font-size: 0.85rem;
-          font-weight: 500;
-        }
-
-        .resume-preview {
-          display: flex;
-          align-items: center;
           justify-content: space-between;
-          margin-top: 1rem;
-          padding-top: 1rem;
-          border-top: 1px solid #f0f0f0;
-        }
-
-        .pdf-icon {
-          width: 40px;
-          height: 50px;
-          background: #f44336;
-          border-radius: 4px;
-          display: flex;
           align-items: center;
-          justify-content: center;
-          color: white;
+          gap: 1rem;
+          color: #444;
+          border-left: 4px solid #FF6B00;
+        }
+        .filter-label {
+          font-weight: 600;
+          color: #D84315;
+          margin-right: 1rem;
+        }
+        .filter-select {
+          padding: 0.5rem 1.25rem;
+          border-radius: 8px;
+          border: 1.5px solid #FF6B00;
+          font-size: 1rem;
+          background: #fff;
+          color: #D84315;
+          box-shadow: 0 2px 8px rgba(255,107,0,0.08);
+          transition: border 0.2s;
+        }
+        .filter-select:focus {
+          border: 1.5px solid #3a88d7;
+          outline: none;
+        }
+        .resume-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 2rem;
+          width: 100%;
+          margin: 0 auto;
+        }
+        .resume-card {
+          background: rgba(255,255,255,0.95);
+          border-radius: 16px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+          padding: 2rem 1.5rem;
+          border-left: 4px solid #FF6B00;
+          color: #444;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .resume-title {
+          font-size: 1.2rem;
           font-weight: bold;
-          font-size: 0.8rem;
+          color: #D84315;
+          margin-bottom: 0.5rem;
         }
-
-        .view-button {
-          background: #0097a7;
+        .resume-meta {
+          font-size: 0.98rem;
+          color: #444;
+          margin-bottom: 0.5rem;
+        }
+        .resume-link {
+          background: linear-gradient(90deg,rgb(68, 190, 123),rgb(66, 163, 81));
           color: white;
-          border: none;
-          padding: 0.5rem 1rem;
-          border-radius: 6px;
-          cursor: pointer;
-          font-size: 0.9rem;
-          font-weight: 500;
-          transition: background 0.3s ease;
+          padding: 0.6rem 1.3rem;
+          border-radius: 8px;
           text-decoration: none;
-          display: inline-block;
+          font-weight: 600;
+          font-size: 1.05rem;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          border: none;
+          margin-top: 1rem;
+          transition: background 0.3s, box-shadow 0.2s, transform 0.2s;
         }
-
-                 .view-button:hover {
-           background: #007b8a;
-         }
-
-         .view-button:active {
-           transform: translateY(1px);
-         }
-
-         .pdf-loading {
-           opacity: 0.7;
-           pointer-events: none;
-         }
-
-         .pdf-error {
-           background: #f44336 !important;
-         }
-
-         .pdf-error:hover {
-           background: #d32f2f !important;
-         }
-
-         .no-resumes {
-          text-align: center;
-          background: white;
-          padding: 3rem 2rem;
-          border-radius: 12px;
-          box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        .resume-link:hover {
+          background: linear-gradient(90deg, #FF6B00, #FFA000);
+          box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+          transform: translateY(-2px) scale(1.04);
         }
-
-        .no-resumes-icon {
-          font-size: 3rem;
-          color: #ccc;
-          margin-bottom: 1rem;
-        }
-
-        .no-resumes-text {
-          color: #666;
-          font-size: 1.1rem;
-        }
-
         @media (max-width: 768px) {
+          .resume-bank-wrapper {
+            padding: 1.5rem 0.7rem;
+          }
           .resume-bank-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
           }
-          
-          .resumes-grid {
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            margin:0rem;
-          }
-          
-          .filter-section {
-            padding: 0.5rem;
-            margin-left:5rem;
-            margin-right:5rem;
-          }
-          
-          .filter-label {
-            display: block;
-            margin-bottom: 1rem;
-            margin-right: 0;
-          }
-          
-          .filter-select {
-            width: 100%;
-            max-width: 100px;
+          .resume-grid {
+            gap: 1rem;
           }
         }
-
         @media (max-width: 480px) {
           .resume-bank-wrapper {
-            padding: 1rem 0.5rem;
-          }
-          
-          .resume-card {
-            padding: 1rem;
-          }
-          
-          .resume-meta {
-            flex-direction: column;
-          }
-        }
-        @media (min-width: 768px) {
-          .resume-bank-wrapper {
-            margin-left: 240px; /* Match sidebar width */
-            width: calc(100vw - 240px);
-          }
-        }
-        @media (max-width: 768px) {
-          .resume-bank-wrapper {
-            margin-left: 0 !important;
-            width: 100% ;
-            padding: 1rem !important;
-          }
-          .sidebar {
-            display: none !important;
-            width: 0 !important;
-            padding: 0 !important;
-            margin: 0 !important;
-          }
-          .resume-bank-container {
-            margin: 0 !important;
-            border-radius: 0 !important;
-            box-shadow: none !important;
-            padding: 1rem !important;
-          }
-          .resume-bank-header {
-            text-align: center !important;
-            align-items: center !important;
-            justify-content: center !important;
-          }
-          .resume-bank-title, .resume-bank-subtitle {
-            text-align: center !important;
+            width: 100%;
+            padding: 0.5rem;
           }
         }
       `}</style>
 
       <div className="resume-bank-wrapper">
         
-        <div className="resume-bank-container">
-          <div className="resume-bank-header">
-            <h1 className="resume-bank-title">📄 Resume Bank</h1>
-            <p className="resume-bank-subtitle">
-              Browse successful previous years internship resumes from various fields
+        <div className="resume-bank-header">
+          <h1 className="resume-bank-title">📄 Resume Bank</h1>
+          <p className="resume-bank-subtitle">
+            Browse successful previous years internship resumes from various fields
+          </p>
+        </div>
+        <div className="filter-section">
+          
+          <label htmlFor="type-filter" className="filter-label">
+            Filter by Field:
+          </label>
+          <select
+            id="type-filter"
+            value={selectedType}
+            onChange={e => setSelectedType(e.target.value)}
+            className="filter-select"
+            aria-label="Filter resumes by field"
+          >
+            {types.map(type => (
+              <option key={type} value={type}>{type}</option>
+            ))}
+          </select>
+          <div className="resume-count">
+            {filteredResumes.length} resume{filteredResumes.length !== 1 ? 's' : ''} found
+          </div>
+        </div>
+
+        {filteredResumes.length > 0 ? (
+          <div className="resume-grid">
+            {filteredResumes.map((resume, index) => (
+              <div key={index} className="resume-card">
+                <h3 className="resume-title">{resume.title}</h3>
+                <p className="resume-summary">{resume.summary}</p>
+                
+                <div className="resume-meta">
+                  <span className="meta-tag">🏢 {resume.company}</span>
+                  <span className="meta-tag">📅 {resume.year}</span>
+                  <span className="meta-tag">🎯 {resume.type}</span>
+                </div>
+                
+                                     <div className="resume-preview">
+                   <div className="pdf-icon">PDF</div>
+                   <a 
+                     href={resume.file} 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="view-button"
+                     aria-label={`View ${resume.title} resume`}
+                   >
+                     View Resume
+                   </a>
+                 </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="no-resumes">
+            <div className="no-resumes-icon">📄</div>
+            <h3>No resumes found</h3>
+            <p className="no-resumes-text">
+              No resumes found for the selected field. Try selecting a different filter.
             </p>
           </div>
-          <div className="filter-section">
-            
-            <label htmlFor="type-filter" className="filter-label">
-              Filter by Field:
-            </label>
-            <select
-              id="type-filter"
-              value={selectedType}
-              onChange={e => setSelectedType(e.target.value)}
-              className="filter-select"
-              aria-label="Filter resumes by field"
-            >
-              {types.map(type => (
-                <option key={type} value={type}>{type}</option>
-              ))}
-            </select>
-            <div className="resume-count">
-              {filteredResumes.length} resume{filteredResumes.length !== 1 ? 's' : ''} found
-            </div>
-          </div>
-
-          {filteredResumes.length > 0 ? (
-            <div className="resumes-grid">
-              {filteredResumes.map((resume, index) => (
-                <div key={index} className="resume-card">
-                  <h3 className="resume-title">{resume.title}</h3>
-                  <p className="resume-summary">{resume.summary}</p>
-                  
-                  <div className="resume-meta">
-                    <span className="meta-tag">🏢 {resume.company}</span>
-                    <span className="meta-tag">📅 {resume.year}</span>
-                    <span className="meta-tag">🎯 {resume.type}</span>
-                  </div>
-                  
-                                     <div className="resume-preview">
-                     <div className="pdf-icon">PDF</div>
-                     <a 
-                       href={resume.file} 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       className="view-button"
-                       aria-label={`View ${resume.title} resume`}
-                     >
-                       View Resume
-                     </a>
-                   </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="no-resumes">
-              <div className="no-resumes-icon">📄</div>
-              <h3>No resumes found</h3>
-              <p className="no-resumes-text">
-                No resumes found for the selected field. Try selecting a different filter.
-              </p>
-            </div>
-          )}
-        </div>
+        )}
       </div>
     </>
   );
